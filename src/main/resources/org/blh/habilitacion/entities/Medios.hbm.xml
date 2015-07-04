@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 30-jun-2015 0:45:24 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="org.blh.habilitacion.entities.Medios" table="medios" schema="public" optimistic-lock="version">
+        <id name="idMedios" type="int">
+            <column name="idMedios" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombreMedio" type="string">
+            <column name="nombreMedio" length="15" not-null="true" />
+        </property>
+        <property name="estadoMedio" type="java.lang.Boolean">
+            <column name="estadoMedio" />
+        </property>
+        <set name="donantes" table="donante" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idMedios" not-null="true" />
+            </key>
+            <one-to-many class="org.blh.habilitacion.entities.Donante" />
+        </set>
+    </class>
+</hibernate-mapping>

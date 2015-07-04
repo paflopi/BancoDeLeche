@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 30-jun-2015 0:45:24 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="org.blh.habilitacion.entities.Localidad" table="localidad" schema="public" optimistic-lock="version">
+        <id name="idLocalidad" type="int">
+            <column name="idLocalidad" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="provincia" class="org.blh.habilitacion.entities.Provincia" fetch="select">
+            <column name="idProvincia" not-null="true" />
+        </many-to-one>
+        <property name="nombreLocalidad" type="string">
+            <column name="nombreLocalidad" length="30" not-null="true" />
+        </property>
+        <property name="cp" type="java.lang.Integer">
+            <column name="cp" />
+        </property>
+        <set name="zonas" table="zona" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idLocalidad" not-null="true" />
+            </key>
+            <one-to-many class="org.blh.habilitacion.entities.Zona" />
+        </set>
+    </class>
+</hibernate-mapping>

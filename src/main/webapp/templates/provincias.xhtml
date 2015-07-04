@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"    
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+          
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <h:head>
+        <title>Principal</title>
+        <link rel="shortcut icon" href="../resources/icons/logo1.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="../resources/css/bootstrap.css" />
+        <script type="text/javascript" src="../resources/js/jquery.js"></script>
+        <script type="text/javascript" src="../resources/js/bootstrap.js"></script>
+<!--        <f:view>
+            <f:event type="preRenderView" listener="" />
+        </f:view>-->
+    </h:head>
+    <body style="background-color: rgb(223,228,230)">
+        <ui:insert name="header">
+            <ui:include src="header.xhtml"></ui:include>
+        </ui:insert>
+        <div class="container" style="background-color: rgb(239,243,246); padding:0px;">
+            <select class="form-control col-lg-2">
+                <c:forEach var="provincia" items="#{clientbean.provincias}">
+                    <option>
+                        <h:outputText value="#{provincia.get('nombre')}" /><br />
+                    </option>
+                </c:forEach>
+            </select>
+        </div><!-- End of container div -->
+    </body>
+</html>

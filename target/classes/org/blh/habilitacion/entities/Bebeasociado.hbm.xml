@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 30-jun-2015 0:45:24 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="org.blh.habilitacion.entities.Bebeasociado" table="bebeasociado" schema="public" optimistic-lock="version">
+        <composite-id name="id" class="org.blh.habilitacion.entities.BebeasociadoId">
+            <key-property name="idBebeAosciado" type="int">
+                <column name="idBebeAosciado" />
+            </key-property>
+            <key-property name="nroConcentimiento" type="int">
+                <column name="nroConcentimiento" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="consentimiento" class="org.blh.habilitacion.entities.Consentimiento" update="false" insert="false" fetch="select">
+            <column name="nroConcentimiento" not-null="true" />
+        </many-to-one>
+        <property name="dni" type="string">
+            <column name="dni" length="10" not-null="true" />
+        </property>
+        <property name="apellyNombreBebeAsociado" type="string">
+            <column name="apellyNombreBebeAsociado" length="25" />
+        </property>
+        <set name="seguimientobebeasociados" table="seguimientobebeasociado" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idBebeAosciado" not-null="true" />
+                <column name="nroConcentimiento" not-null="true" />
+            </key>
+            <one-to-many class="org.blh.habilitacion.entities.Seguimientobebeasociado" />
+        </set>
+    </class>
+</hibernate-mapping>

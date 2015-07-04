@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+    <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+    <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/BLH</property>
+    <property name="hibernate.connection.username">postgres</property>
+    <property name="hibernate.connection.password">jajkaN17</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <mapping resource="org/blh/habilitacion/entities/Bebeasociado.hbm.xml"/>
+    <mapping resource="org/blh/habilitacion/entities/Fraccionamiento.hbm.xml"/>
+    <mapping resource="org/blh/habilitacion/entities/Seguimientobebeasociado.hbm.xml"/>
+    <mapping resource="org/blh/habilitacion/entities/Consentimiento.hbm.xml"/>
+    <mapping resource="org/blh/habilitacion/entities/Zona.hbm.xml"/>
+    <mapping resource="org/blh/habilitacion/entities/Provincia.hbm.xml"/>
+    <mapping resource="org/blh/habilitacion/entities/Entregadebiberonacentro.hbm.xml"/>
+    <mapping resource="org/blh/habilitacion/entities/Medios.hbm.xml"/>
+    <mapping resource="org/blh/habilitacion/entities/Frascos.hbm.xml"/>
+    <mapping resource="org/blh/habilitacion/entities/Seguimientobebereceptor.hbm.xml"/>
+    <mapping resource="org/blh/habilitacion/entities/Bebereceptor.hbm.xml"/>
+    <mapping resource="org/blh/habilitacion/entities/Biberon.hbm.xml"/>
+    <mapping resource="org/blh/habilitacion/entities/Hojaderuta.hbm.xml"/>
+    <mapping resource="org/blh/habilitacion/entities/Localidad.hbm.xml"/>
+    <mapping resource="org/blh/habilitacion/entities/Pasteurizacion.hbm.xml"/>
+    <mapping resource="org/blh/habilitacion/entities/Donante.hbm.xml"/>
+    <mapping resource="org/blh/habilitacion/entities/Usuario.hbm.xml"/>
+    <mapping resource="org/blh/habilitacion/entities/Serologia.hbm.xml"/>
+    <mapping resource="org/blh/habilitacion/entities/Perfil.hbm.xml"/>
+    <mapping resource="org/blh/habilitacion/entities/Consentimientoxhr.hbm.xml"/>
+    <mapping resource="org/blh/habilitacion/entities/Centros.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

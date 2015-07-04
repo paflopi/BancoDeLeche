@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="BLH" match-schema="public"/>
+  <table-filter match-name="serologia"/>
+  <table-filter match-name="perfil"/>
+  <table-filter match-name="biberon"/>
+  <table-filter match-name="usuario"/>
+  <table-filter match-name="consentimientoxhr"/>
+  <table-filter match-name="entregadebiberonacentro"/>
+  <table-filter match-name="localidad"/>
+  <table-filter match-name="pasteurizacion"/>
+  <table-filter match-name="fraccionamiento"/>
+  <table-filter match-name="consentimiento"/>
+  <table-filter match-name="frascos"/>
+  <table-filter match-name="seguimientobebeasociado"/>
+  <table-filter match-name="medios"/>
+  <table-filter match-name="bebeasociado"/>
+  <table-filter match-name="seguimientobebereceptor"/>
+  <table-filter match-name="bebereceptor"/>
+  <table-filter match-name="donante"/>
+  <table-filter match-name="hojaderuta"/>
+  <table-filter match-name="provincia"/>
+  <table-filter match-name="centros"/>
+  <table-filter match-name="zona"/>
+</hibernate-reverse-engineering>

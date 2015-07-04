@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 30-jun-2015 0:45:24 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="org.blh.habilitacion.entities.Seguimientobebereceptor" table="seguimientobebereceptor" schema="public" optimistic-lock="version">
+        <composite-id name="id" class="org.blh.habilitacion.entities.SeguimientobebereceptorId">
+            <key-property name="idSegBebeReceptor" type="int">
+                <column name="idSegBebeReceptor" />
+            </key-property>
+            <key-property name="idBebeReceptor" type="int">
+                <column name="idBebeReceptor" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="bebereceptor" class="org.blh.habilitacion.entities.Bebereceptor" update="false" insert="false" fetch="select">
+            <column name="idBebeReceptor" not-null="true" />
+        </many-to-one>
+        <property name="fechSegBebeReceptor" type="date">
+            <column name="fechSegBebeReceptor" length="13" />
+        </property>
+        <property name="edadGestacionalBebeReceptor" type="java.lang.Integer">
+            <column name="edadGestacionalBebeReceptor" />
+        </property>
+        <property name="tallaBebeReceptor" type="java.lang.Double">
+            <column name="tallaBebeReceptor" precision="17" scale="17" />
+        </property>
+        <property name="pesoBebeReceptor" type="java.lang.Double">
+            <column name="pesoBebeReceptor" precision="17" scale="17" />
+        </property>
+        <property name="perimetroEncefalicoBebeReceptor" type="java.lang.Double">
+            <column name="perimetroEncefalicoBebeReceptor" precision="17" scale="17" />
+        </property>
+        <property name="observaciones" type="string">
+            <column name="observaciones" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

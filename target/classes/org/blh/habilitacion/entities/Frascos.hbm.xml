@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 30-jun-2015 0:45:24 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="org.blh.habilitacion.entities.Frascos" table="frascos" schema="public" optimistic-lock="version">
+        <id name="nroFrasco" type="int">
+            <column name="nroFrasco" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="biberon" class="org.blh.habilitacion.entities.Biberon" fetch="select">
+            <column name="idBiberon" not-null="true" />
+        </many-to-one>
+        <many-to-one name="consentimientoxhr" class="org.blh.habilitacion.entities.Consentimientoxhr" fetch="select">
+            <column name="nroConcentimiento" not-null="true" />
+            <column name="idHojadeRuta" not-null="true" />
+        </many-to-one>
+        <property name="fechaExtracion" type="date">
+            <column name="fechaExtracion" length="13" />
+        </property>
+        <property name="tipoDeLeche" type="string">
+            <column name="tipoDeLeche" length="10" />
+        </property>
+        <property name="estadoDeFrasco" type="string">
+            <column name="estadoDeFrasco" length="10" />
+        </property>
+        <property name="volumenDeLeche" type="string">
+            <column name="volumenDeLeche" length="10" />
+        </property>
+        <property name="nivelDeAcides" type="java.lang.Double">
+            <column name="nivelDeAcides" precision="17" scale="17" />
+        </property>
+        <property name="hematocritos" type="java.lang.Double">
+            <column name="hematocritos" precision="17" scale="17" />
+        </property>
+        <property name="estadoFrasco" type="java.lang.Boolean">
+            <column name="estadoFrasco" />
+        </property>
+        <property name="motRechazoFrasco" type="string">
+            <column name="motRechazoFrasco" length="25" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 30-jun-2015 0:45:24 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="org.blh.habilitacion.entities.Zona" table="zona" schema="public" optimistic-lock="version">
+        <id name="idZona" type="int">
+            <column name="idZona" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="localidad" class="org.blh.habilitacion.entities.Localidad" fetch="select">
+            <column name="idLocalidad" not-null="true" />
+        </many-to-one>
+        <property name="nombreZona" type="string">
+            <column name="nombreZona" length="30" not-null="true" />
+        </property>
+        <property name="estadoZona" type="boolean">
+            <column name="estadoZona" not-null="true" />
+        </property>
+        <property name="lunes" type="java.lang.Boolean">
+            <column name="lunes" />
+        </property>
+        <property name="martes" type="java.lang.Boolean">
+            <column name="martes" />
+        </property>
+        <property name="miercoles" type="java.lang.Boolean">
+            <column name="miercoles" />
+        </property>
+        <property name="jueves" type="java.lang.Boolean">
+            <column name="jueves" />
+        </property>
+        <property name="viernes" type="java.lang.Boolean">
+            <column name="viernes" />
+        </property>
+        <set name="consentimientos" table="consentimiento" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idZona" not-null="true" />
+            </key>
+            <one-to-many class="org.blh.habilitacion.entities.Consentimiento" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 30-jun-2015 0:45:24 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="org.blh.habilitacion.entities.Fraccionamiento" table="fraccionamiento" schema="public" optimistic-lock="version">
+        <composite-id name="id" class="org.blh.habilitacion.entities.FraccionamientoId">
+            <key-property name="idFraccionamiento" type="int">
+                <column name="idFraccionamiento" />
+            </key-property>
+            <key-property name="idBebeReceptor" type="int">
+                <column name="idBebeReceptor" />
+            </key-property>
+            <key-property name="idBiberon" type="int">
+                <column name="idBiberon" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="bebereceptor" class="org.blh.habilitacion.entities.Bebereceptor" update="false" insert="false" fetch="select">
+            <column name="idBebeReceptor" not-null="true" />
+        </many-to-one>
+        <many-to-one name="biberon" class="org.blh.habilitacion.entities.Biberon" update="false" insert="false" fetch="select">
+            <column name="idBiberon" not-null="true" />
+        </many-to-one>
+        <property name="fechFraccionamiento" type="date">
+            <column name="fechFraccionamiento" length="13" />
+        </property>
+        <property name="prescNutricionista" type="string">
+            <column name="prescNutricionista" length="10" />
+        </property>
+        <property name="volumen" type="java.lang.Double">
+            <column name="volumen" precision="17" scale="17" />
+        </property>
+        <property name="consumido" type="java.lang.Double">
+            <column name="consumido" precision="17" scale="17" />
+        </property>
+        <property name="motNoConsumo" type="string">
+            <column name="motNoConsumo" length="30" />
+        </property>
+    </class>
+</hibernate-mapping>
