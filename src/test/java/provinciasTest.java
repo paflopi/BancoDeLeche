@@ -5,12 +5,20 @@
  */
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
 import org.blh.habilitacion.beans.ClientBean;
 import org.blh.habilitacion.controllers.ProvinciaController;
+import org.blh.habilitacion.entities.Localidad;
 import org.blh.habilitacion.entities.Provincia;
 import org.blh.habilitacion.restclient.UserClient;
+import org.blh.habilitacion.util.HibernateUtil;
+import org.hibernate.Hibernate;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
@@ -56,10 +64,15 @@ public class provinciasTest {
     // The methods must be annotated with annotation @Test. For example:
     //
     @Test
+    @Ignore
     public void allProvincias() {
         ProvinciaController pc = new ProvinciaController();
-        ArrayList<Provincia> l = (ArrayList<Provincia>) pc.all();
-        Gson json = new Gson();
-        System.out.println(json.toJson(l));
+        List<Provincia> l = pc.all();
+        GsonBuilder gb = new GsonBuilder();
+        new GraphAdapterBuilder()
+            .addType(Provincia  .class)
+            .registerOn(gb);
+        Gson gson = gb.create();
+        System.out.println(gson.toJson(l, l.getClass()));
     }
 }

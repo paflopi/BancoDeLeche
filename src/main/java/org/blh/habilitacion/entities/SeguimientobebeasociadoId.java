@@ -1,5 +1,5 @@
 package org.blh.habilitacion.entities;
-// Generated 30-jun-2015 0:45:21 by Hibernate Tools 4.3.1
+// Generated 06-jul-2015 22:01:19 by Hibernate Tools 4.3.1
 
 
 import javax.persistence.Column;
@@ -12,48 +12,48 @@ import javax.persistence.Embeddable;
 public class SeguimientobebeasociadoId  implements java.io.Serializable {
 
 
-     private int idSeguimiento;
-     private int idBebeAosciado;
-     private int nroConcentimiento;
+     private int idseguimiento;
+     private int idbebeasociado;
+     private int nroconcentimiento;
 
     public SeguimientobebeasociadoId() {
     }
 
-    public SeguimientobebeasociadoId(int idSeguimiento, int idBebeAosciado, int nroConcentimiento) {
-       this.idSeguimiento = idSeguimiento;
-       this.idBebeAosciado = idBebeAosciado;
-       this.nroConcentimiento = nroConcentimiento;
+    public SeguimientobebeasociadoId(int idseguimiento, int idbebeasociado, int nroconcentimiento) {
+       this.idseguimiento = idseguimiento;
+       this.idbebeasociado = idbebeasociado;
+       this.nroconcentimiento = nroconcentimiento;
     }
    
 
 
-    @Column(name="IdSeguimiento", nullable=false)
-    public int getIdSeguimiento() {
-        return this.idSeguimiento;
+    @Column(name="Idseguimiento", nullable=false)
+    public int getIdseguimiento() {
+        return this.idseguimiento;
     }
     
-    public void setIdSeguimiento(int idSeguimiento) {
-        this.idSeguimiento = idSeguimiento;
+    public void setIdseguimiento(int idseguimiento) {
+        this.idseguimiento = idseguimiento;
     }
 
 
-    @Column(name="idBebeAosciado", nullable=false)
-    public int getIdBebeAosciado() {
-        return this.idBebeAosciado;
-    }
-    
-    public void setIdBebeAosciado(int idBebeAosciado) {
-        this.idBebeAosciado = idBebeAosciado;
-    }
-
-
-    @Column(name="nroConcentimiento", nullable=false)
-    public int getNroConcentimiento() {
-        return this.nroConcentimiento;
+    @Column(name="idbebeasociado", nullable=false)
+    public int getIdbebeasociado() {
+        return this.idbebeasociado;
     }
     
-    public void setNroConcentimiento(int nroConcentimiento) {
-        this.nroConcentimiento = nroConcentimiento;
+    public void setIdbebeasociado(int idbebeasociado) {
+        this.idbebeasociado = idbebeasociado;
+    }
+
+
+    @Column(name="nroconcentimiento", nullable=false)
+    public int getNroconcentimiento() {
+        return this.nroconcentimiento;
+    }
+    
+    public void setNroconcentimiento(int nroconcentimiento) {
+        this.nroconcentimiento = nroconcentimiento;
     }
 
 
@@ -63,17 +63,17 @@ public class SeguimientobebeasociadoId  implements java.io.Serializable {
 		 if ( !(other instanceof SeguimientobebeasociadoId) ) return false;
 		 SeguimientobebeasociadoId castOther = ( SeguimientobebeasociadoId ) other; 
          
-		 return (this.getIdSeguimiento()==castOther.getIdSeguimiento())
- && (this.getIdBebeAosciado()==castOther.getIdBebeAosciado())
- && (this.getNroConcentimiento()==castOther.getNroConcentimiento());
+		 return (this.getIdseguimiento()==castOther.getIdseguimiento())
+ && (this.getIdbebeasociado()==castOther.getIdbebeasociado())
+ && (this.getNroconcentimiento()==castOther.getNroconcentimiento());
    }
    
    public int hashCode() {
          int result = 17;
          
-         result = 37 * result + this.getIdSeguimiento();
-         result = 37 * result + this.getIdBebeAosciado();
-         result = 37 * result + this.getNroConcentimiento();
+         result = 37 * result + this.getIdseguimiento();
+         result = 37 * result + this.getIdbebeasociado();
+         result = 37 * result + this.getNroconcentimiento();
          return result;
    }   
 

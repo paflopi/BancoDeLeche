@@ -27,8 +27,9 @@ public class LoginController {
             sf = HibernateUtil.getSessionFactory();
             Session s = sf.openSession();
             u = (Usuario) s.createCriteria(Usuario.class).add(Restrictions.eq("username", username)).add(Restrictions.eq("password", pass)).setMaxResults(1).uniqueResult();
-            Hibernate.initialize(u.getPerfil());
-            Hibernate.initialize(u.getId());
+            if(u != null){
+                Hibernate.initialize(u.getPerfil());
+            }
             s.close();
         } catch (Exception e) {
             e.printStackTrace();

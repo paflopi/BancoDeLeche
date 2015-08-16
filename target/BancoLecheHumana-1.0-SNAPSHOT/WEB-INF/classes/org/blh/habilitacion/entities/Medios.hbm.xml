@@ -1,22 +1,22 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 30-jun-2015 0:45:24 by Hibernate Tools 4.3.1 -->
+<!-- Generated 06-jul-2015 22:01:22 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="org.blh.habilitacion.entities.Medios" table="medios" schema="public" optimistic-lock="version">
-        <id name="idMedios" type="int">
-            <column name="idMedios" />
+        <id name="idmedios" type="int">
+            <column name="idmedios" />
             <generator class="assigned" />
         </id>
-        <property name="nombreMedio" type="string">
-            <column name="nombreMedio" length="15" not-null="true" />
+        <property name="nombremedio" type="string">
+            <column name="nombremedio" length="15" not-null="true" />
         </property>
-        <property name="estadoMedio" type="java.lang.Boolean">
-            <column name="estadoMedio" />
+        <property name="estadomedio" type="java.lang.Boolean">
+            <column name="estadomedio" />
         </property>
         <set name="donantes" table="donante" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="idMedios" not-null="true" />
+                <column name="idmedios" not-null="true" />
             </key>
             <one-to-many class="org.blh.habilitacion.entities.Donante" />
         </set>

@@ -1,5 +1,5 @@
 package org.blh.habilitacion.entities;
-// Generated 30-jun-2015 0:45:21 by Hibernate Tools 4.3.1
+// Generated 06-jul-2015 22:01:19 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -23,19 +23,19 @@ import javax.persistence.Table;
 public class Biberon  implements java.io.Serializable {
 
 
-     private int idBiberon;
+     private int idbiberon;
      private Pasteurizacion pasteurizacion;
-     private Double volumenDeLeche;
-     private Double tipoDeLeche;
+     private Double volumendeleche;
+     private Double tipodeleche;
      private Double hematocritos;
      private Double crema;
-     private Double totalCol;
+     private Double totalcol;
      private Double gordura;
      private Double kcalxl;
-     private Double cultivoCal24;
-     private Double cultivoCal48;
+     private Double cultivocal24;
+     private Double cultivocal48;
      private Boolean estado;
-     private String motivoRechazo;
+     private String motivorechazo;
      private Set entregadebiberonacentros = new HashSet(0);
      private Set fraccionamientos = new HashSet(0);
      private Set frascoses = new HashSet(0);
@@ -44,24 +44,24 @@ public class Biberon  implements java.io.Serializable {
     }
 
 	
-    public Biberon(int idBiberon, Pasteurizacion pasteurizacion) {
-        this.idBiberon = idBiberon;
+    public Biberon(int idbiberon, Pasteurizacion pasteurizacion) {
+        this.idbiberon = idbiberon;
         this.pasteurizacion = pasteurizacion;
     }
-    public Biberon(int idBiberon, Pasteurizacion pasteurizacion, Double volumenDeLeche, Double tipoDeLeche, Double hematocritos, Double crema, Double totalCol, Double gordura, Double kcalxl, Double cultivoCal24, Double cultivoCal48, Boolean estado, String motivoRechazo, Set entregadebiberonacentros, Set fraccionamientos, Set frascoses) {
-       this.idBiberon = idBiberon;
+    public Biberon(int idbiberon, Pasteurizacion pasteurizacion, Double volumendeleche, Double tipodeleche, Double hematocritos, Double crema, Double totalcol, Double gordura, Double kcalxl, Double cultivocal24, Double cultivocal48, Boolean estado, String motivorechazo, Set entregadebiberonacentros, Set fraccionamientos, Set frascoses) {
+       this.idbiberon = idbiberon;
        this.pasteurizacion = pasteurizacion;
-       this.volumenDeLeche = volumenDeLeche;
-       this.tipoDeLeche = tipoDeLeche;
+       this.volumendeleche = volumendeleche;
+       this.tipodeleche = tipodeleche;
        this.hematocritos = hematocritos;
        this.crema = crema;
-       this.totalCol = totalCol;
+       this.totalcol = totalcol;
        this.gordura = gordura;
        this.kcalxl = kcalxl;
-       this.cultivoCal24 = cultivoCal24;
-       this.cultivoCal48 = cultivoCal48;
+       this.cultivocal24 = cultivocal24;
+       this.cultivocal48 = cultivocal48;
        this.estado = estado;
-       this.motivoRechazo = motivoRechazo;
+       this.motivorechazo = motivorechazo;
        this.entregadebiberonacentros = entregadebiberonacentros;
        this.fraccionamientos = fraccionamientos;
        this.frascoses = frascoses;
@@ -70,17 +70,17 @@ public class Biberon  implements java.io.Serializable {
      @Id 
 
     
-    @Column(name="idBiberon", nullable=false)
-    public int getIdBiberon() {
-        return this.idBiberon;
+    @Column(name="idbiberon", unique=true, nullable=false)
+    public int getIdbiberon() {
+        return this.idbiberon;
     }
     
-    public void setIdBiberon(int idBiberon) {
-        this.idBiberon = idBiberon;
+    public void setIdbiberon(int idbiberon) {
+        this.idbiberon = idbiberon;
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="idPasteurizacion", nullable=false)
+    @JoinColumn(name="idpasteurizacion", nullable=false)
     public Pasteurizacion getPasteurizacion() {
         return this.pasteurizacion;
     }
@@ -90,23 +90,23 @@ public class Biberon  implements java.io.Serializable {
     }
 
     
-    @Column(name="volumenDeLeche", precision=17, scale=17)
-    public Double getVolumenDeLeche() {
-        return this.volumenDeLeche;
+    @Column(name="volumendeleche", precision=17, scale=17)
+    public Double getVolumendeleche() {
+        return this.volumendeleche;
     }
     
-    public void setVolumenDeLeche(Double volumenDeLeche) {
-        this.volumenDeLeche = volumenDeLeche;
+    public void setVolumendeleche(Double volumendeleche) {
+        this.volumendeleche = volumendeleche;
     }
 
     
-    @Column(name="tipoDeLeche", precision=17, scale=17)
-    public Double getTipoDeLeche() {
-        return this.tipoDeLeche;
+    @Column(name="tipodeleche", precision=17, scale=17)
+    public Double getTipodeleche() {
+        return this.tipodeleche;
     }
     
-    public void setTipoDeLeche(Double tipoDeLeche) {
-        this.tipoDeLeche = tipoDeLeche;
+    public void setTipodeleche(Double tipodeleche) {
+        this.tipodeleche = tipodeleche;
     }
 
     
@@ -130,13 +130,13 @@ public class Biberon  implements java.io.Serializable {
     }
 
     
-    @Column(name="totalCol", precision=17, scale=17)
-    public Double getTotalCol() {
-        return this.totalCol;
+    @Column(name="totalcol", precision=17, scale=17)
+    public Double getTotalcol() {
+        return this.totalcol;
     }
     
-    public void setTotalCol(Double totalCol) {
-        this.totalCol = totalCol;
+    public void setTotalcol(Double totalcol) {
+        this.totalcol = totalcol;
     }
 
     
@@ -160,23 +160,23 @@ public class Biberon  implements java.io.Serializable {
     }
 
     
-    @Column(name="cultivoCal24", precision=17, scale=17)
-    public Double getCultivoCal24() {
-        return this.cultivoCal24;
+    @Column(name="cultivocal24", precision=17, scale=17)
+    public Double getCultivocal24() {
+        return this.cultivocal24;
     }
     
-    public void setCultivoCal24(Double cultivoCal24) {
-        this.cultivoCal24 = cultivoCal24;
+    public void setCultivocal24(Double cultivocal24) {
+        this.cultivocal24 = cultivocal24;
     }
 
     
-    @Column(name="cultivoCal48", precision=17, scale=17)
-    public Double getCultivoCal48() {
-        return this.cultivoCal48;
+    @Column(name="cultivocal48", precision=17, scale=17)
+    public Double getCultivocal48() {
+        return this.cultivocal48;
     }
     
-    public void setCultivoCal48(Double cultivoCal48) {
-        this.cultivoCal48 = cultivoCal48;
+    public void setCultivocal48(Double cultivocal48) {
+        this.cultivocal48 = cultivocal48;
     }
 
     
@@ -190,13 +190,13 @@ public class Biberon  implements java.io.Serializable {
     }
 
     
-    @Column(name="motivoRechazo", length=50)
-    public String getMotivoRechazo() {
-        return this.motivoRechazo;
+    @Column(name="motivorechazo", length=50)
+    public String getMotivorechazo() {
+        return this.motivorechazo;
     }
     
-    public void setMotivoRechazo(String motivoRechazo) {
-        this.motivoRechazo = motivoRechazo;
+    public void setMotivorechazo(String motivorechazo) {
+        this.motivorechazo = motivorechazo;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="biberon")

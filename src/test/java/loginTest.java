@@ -5,6 +5,7 @@
  */
 
 import org.blh.habilitacion.controllers.LoginController;
+import org.blh.habilitacion.controllers.UsuarioController;
 import org.blh.habilitacion.entities.Usuario;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -35,7 +36,7 @@ public class loginTest {
     
     @Before
     public void setUp() {
-        u = LoginController.login("yogonza524", "jajkaN17");
+//        u = LoginController.login("yogonza524", "jajkaN17");
     }
     
     @After
@@ -48,7 +49,7 @@ public class loginTest {
     @Test
     @Ignore
     public void testLogin() {
-        assertNotNull(u);
-        System.out.println("Perfil: " + u.getPerfil().getDescripcion());
+        UsuarioController uc = new UsuarioController();
+        System.out.println(uc.all());
     }
 }

@@ -1,8 +1,7 @@
 package org.blh.habilitacion.entities;
-// Generated 30-jun-2015 0:45:21 by Hibernate Tools 4.3.1
+// Generated 06-jul-2015 22:01:19 by Hibernate Tools 4.3.1
 
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
@@ -23,20 +22,20 @@ public class Provincia  implements java.io.Serializable {
 
 
      private int idprovincia;
-     private String nombreprovincia;
+     private String nombreProvincia;
      private Set localidads = new HashSet(0);
 
     public Provincia() {
     }
 
 	
-    public Provincia(int idprovincia, String nombreprovincia) {
+    public Provincia(int idprovincia, String nombreProvincia) {
         this.idprovincia = idprovincia;
-        this.nombreprovincia = nombreprovincia;
+        this.nombreProvincia = nombreProvincia;
     }
-    public Provincia(int idprovincia, String nombreprovincia, Set localidads) {
+    public Provincia(int idprovincia, String nombreProvincia, Set localidads) {
        this.idprovincia = idprovincia;
-       this.nombreprovincia = nombreprovincia;
+       this.nombreProvincia = nombreProvincia;
        this.localidads = localidads;
     }
    
@@ -53,15 +52,15 @@ public class Provincia  implements java.io.Serializable {
     }
 
     
-    @Column(name="nombreprovincia", nullable=false, length=30)
-    public String getNombreprovincia() {
-        return this.nombreprovincia;
+    @Column(name="nombreProvincia", nullable=false, length=30)
+    public String getNombreProvincia() {
+        return this.nombreProvincia;
     }
     
-    public void setNombreprovincia(String nombreprovincia) {
-        this.nombreprovincia = nombreprovincia;
+    public void setNombreProvincia(String nombreProvincia) {
+        this.nombreProvincia = nombreProvincia;
     }
-    
+
 @OneToMany(fetch=FetchType.LAZY, mappedBy="provincia")
     public Set getLocalidads() {
         return this.localidads;

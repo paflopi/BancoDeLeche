@@ -1,5 +1,5 @@
 package org.blh.habilitacion.entities;
-// Generated 30-jun-2015 0:45:21 by Hibernate Tools 4.3.1
+// Generated 06-jul-2015 22:01:19 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -24,16 +24,16 @@ import javax.persistence.TemporalType;
 public class Bebereceptor  implements java.io.Serializable {
 
 
-     private int idBebeReceptor;
-     private String dniBebeReceptor;
-     private String apellyNombreBebeReceptor;
-     private Date fehcaDeNac;
-     private String lugarNac;
-     private String nombreMade;
-     private String nombrePadre;
+     private int idbebereceptor;
+     private String dnibebereceptor;
+     private String apellynombrebebereceptor;
+     private Date fehcadenac;
+     private String lugarnac;
+     private String nombremadre;
+     private String nombrepadre;
      private String direccion;
-     private Boolean consumoLecheBanco;
-     private String motNoConsumo;
+     private Boolean consumolechebanco;
+     private String motnoconsumo;
      private Set fraccionamientos = new HashSet(0);
      private Set seguimientobebereceptors = new HashSet(0);
 
@@ -41,21 +41,21 @@ public class Bebereceptor  implements java.io.Serializable {
     }
 
 	
-    public Bebereceptor(int idBebeReceptor, String nombreMade) {
-        this.idBebeReceptor = idBebeReceptor;
-        this.nombreMade = nombreMade;
+    public Bebereceptor(int idbebereceptor, String nombremadre) {
+        this.idbebereceptor = idbebereceptor;
+        this.nombremadre = nombremadre;
     }
-    public Bebereceptor(int idBebeReceptor, String dniBebeReceptor, String apellyNombreBebeReceptor, Date fehcaDeNac, String lugarNac, String nombreMade, String nombrePadre, String direccion, Boolean consumoLecheBanco, String motNoConsumo, Set fraccionamientos, Set seguimientobebereceptors) {
-       this.idBebeReceptor = idBebeReceptor;
-       this.dniBebeReceptor = dniBebeReceptor;
-       this.apellyNombreBebeReceptor = apellyNombreBebeReceptor;
-       this.fehcaDeNac = fehcaDeNac;
-       this.lugarNac = lugarNac;
-       this.nombreMade = nombreMade;
-       this.nombrePadre = nombrePadre;
+    public Bebereceptor(int idbebereceptor, String dnibebereceptor, String apellynombrebebereceptor, Date fehcadenac, String lugarnac, String nombremadre, String nombrepadre, String direccion, Boolean consumolechebanco, String motnoconsumo, Set fraccionamientos, Set seguimientobebereceptors) {
+       this.idbebereceptor = idbebereceptor;
+       this.dnibebereceptor = dnibebereceptor;
+       this.apellynombrebebereceptor = apellynombrebebereceptor;
+       this.fehcadenac = fehcadenac;
+       this.lugarnac = lugarnac;
+       this.nombremadre = nombremadre;
+       this.nombrepadre = nombrepadre;
        this.direccion = direccion;
-       this.consumoLecheBanco = consumoLecheBanco;
-       this.motNoConsumo = motNoConsumo;
+       this.consumolechebanco = consumolechebanco;
+       this.motnoconsumo = motnoconsumo;
        this.fraccionamientos = fraccionamientos;
        this.seguimientobebereceptors = seguimientobebereceptors;
     }
@@ -63,73 +63,73 @@ public class Bebereceptor  implements java.io.Serializable {
      @Id 
 
     
-    @Column(name="idBebeReceptor", nullable=false)
-    public int getIdBebeReceptor() {
-        return this.idBebeReceptor;
+    @Column(name="idbebereceptor", unique=true, nullable=false)
+    public int getIdbebereceptor() {
+        return this.idbebereceptor;
     }
     
-    public void setIdBebeReceptor(int idBebeReceptor) {
-        this.idBebeReceptor = idBebeReceptor;
-    }
-
-    
-    @Column(name="dniBebeReceptor", length=10)
-    public String getDniBebeReceptor() {
-        return this.dniBebeReceptor;
-    }
-    
-    public void setDniBebeReceptor(String dniBebeReceptor) {
-        this.dniBebeReceptor = dniBebeReceptor;
+    public void setIdbebereceptor(int idbebereceptor) {
+        this.idbebereceptor = idbebereceptor;
     }
 
     
-    @Column(name="apellyNombreBebeReceptor", length=25)
-    public String getApellyNombreBebeReceptor() {
-        return this.apellyNombreBebeReceptor;
+    @Column(name="dnibebereceptor", length=10)
+    public String getDnibebereceptor() {
+        return this.dnibebereceptor;
     }
     
-    public void setApellyNombreBebeReceptor(String apellyNombreBebeReceptor) {
-        this.apellyNombreBebeReceptor = apellyNombreBebeReceptor;
+    public void setDnibebereceptor(String dnibebereceptor) {
+        this.dnibebereceptor = dnibebereceptor;
+    }
+
+    
+    @Column(name="apellynombrebebereceptor", length=25)
+    public String getApellynombrebebereceptor() {
+        return this.apellynombrebebereceptor;
+    }
+    
+    public void setApellynombrebebereceptor(String apellynombrebebereceptor) {
+        this.apellynombrebebereceptor = apellynombrebebereceptor;
     }
 
     @Temporal(TemporalType.DATE)
-    @Column(name="fehcaDeNac", length=13)
-    public Date getFehcaDeNac() {
-        return this.fehcaDeNac;
+    @Column(name="fehcadenac", length=13)
+    public Date getFehcadenac() {
+        return this.fehcadenac;
     }
     
-    public void setFehcaDeNac(Date fehcaDeNac) {
-        this.fehcaDeNac = fehcaDeNac;
-    }
-
-    
-    @Column(name="lugarNac", length=25)
-    public String getLugarNac() {
-        return this.lugarNac;
-    }
-    
-    public void setLugarNac(String lugarNac) {
-        this.lugarNac = lugarNac;
+    public void setFehcadenac(Date fehcadenac) {
+        this.fehcadenac = fehcadenac;
     }
 
     
-    @Column(name="nombreMade", nullable=false, length=18)
-    public String getNombreMade() {
-        return this.nombreMade;
+    @Column(name="lugarnac", length=25)
+    public String getLugarnac() {
+        return this.lugarnac;
     }
     
-    public void setNombreMade(String nombreMade) {
-        this.nombreMade = nombreMade;
+    public void setLugarnac(String lugarnac) {
+        this.lugarnac = lugarnac;
     }
 
     
-    @Column(name="nombrePadre", length=10)
-    public String getNombrePadre() {
-        return this.nombrePadre;
+    @Column(name="nombremadre", nullable=false, length=18)
+    public String getNombremadre() {
+        return this.nombremadre;
     }
     
-    public void setNombrePadre(String nombrePadre) {
-        this.nombrePadre = nombrePadre;
+    public void setNombremadre(String nombremadre) {
+        this.nombremadre = nombremadre;
+    }
+
+    
+    @Column(name="nombrepadre", length=10)
+    public String getNombrepadre() {
+        return this.nombrepadre;
+    }
+    
+    public void setNombrepadre(String nombrepadre) {
+        this.nombrepadre = nombrepadre;
     }
 
     
@@ -143,23 +143,23 @@ public class Bebereceptor  implements java.io.Serializable {
     }
 
     
-    @Column(name="consumoLecheBanco")
-    public Boolean getConsumoLecheBanco() {
-        return this.consumoLecheBanco;
+    @Column(name="consumolechebanco")
+    public Boolean getConsumolechebanco() {
+        return this.consumolechebanco;
     }
     
-    public void setConsumoLecheBanco(Boolean consumoLecheBanco) {
-        this.consumoLecheBanco = consumoLecheBanco;
+    public void setConsumolechebanco(Boolean consumolechebanco) {
+        this.consumolechebanco = consumolechebanco;
     }
 
     
-    @Column(name="motNoConsumo", length=30)
-    public String getMotNoConsumo() {
-        return this.motNoConsumo;
+    @Column(name="motnoconsumo", length=30)
+    public String getMotnoconsumo() {
+        return this.motnoconsumo;
     }
     
-    public void setMotNoConsumo(String motNoConsumo) {
-        this.motNoConsumo = motNoConsumo;
+    public void setMotnoconsumo(String motnoconsumo) {
+        this.motnoconsumo = motnoconsumo;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="bebereceptor")

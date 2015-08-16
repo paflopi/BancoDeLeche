@@ -1,5 +1,5 @@
 package org.blh.habilitacion.entities;
-// Generated 30-jun-2015 0:45:21 by Hibernate Tools 4.3.1
+// Generated 06-jul-2015 22:01:19 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -27,11 +27,11 @@ public class Seguimientobebereceptor  implements java.io.Serializable {
 
      private SeguimientobebereceptorId id;
      private Bebereceptor bebereceptor;
-     private Date fechSegBebeReceptor;
-     private Integer edadGestacionalBebeReceptor;
-     private Double tallaBebeReceptor;
-     private Double pesoBebeReceptor;
-     private Double perimetroEncefalicoBebeReceptor;
+     private Date fechsegbebereceptor;
+     private Integer edadgestacionalbebereceptor;
+     private Double tallabebereceptor;
+     private Double pesobebereceptor;
+     private Double perimetroencefalicobebereceptor;
      private String observaciones;
 
     public Seguimientobebereceptor() {
@@ -42,14 +42,14 @@ public class Seguimientobebereceptor  implements java.io.Serializable {
         this.id = id;
         this.bebereceptor = bebereceptor;
     }
-    public Seguimientobebereceptor(SeguimientobebereceptorId id, Bebereceptor bebereceptor, Date fechSegBebeReceptor, Integer edadGestacionalBebeReceptor, Double tallaBebeReceptor, Double pesoBebeReceptor, Double perimetroEncefalicoBebeReceptor, String observaciones) {
+    public Seguimientobebereceptor(SeguimientobebereceptorId id, Bebereceptor bebereceptor, Date fechsegbebereceptor, Integer edadgestacionalbebereceptor, Double tallabebereceptor, Double pesobebereceptor, Double perimetroencefalicobebereceptor, String observaciones) {
        this.id = id;
        this.bebereceptor = bebereceptor;
-       this.fechSegBebeReceptor = fechSegBebeReceptor;
-       this.edadGestacionalBebeReceptor = edadGestacionalBebeReceptor;
-       this.tallaBebeReceptor = tallaBebeReceptor;
-       this.pesoBebeReceptor = pesoBebeReceptor;
-       this.perimetroEncefalicoBebeReceptor = perimetroEncefalicoBebeReceptor;
+       this.fechsegbebereceptor = fechsegbebereceptor;
+       this.edadgestacionalbebereceptor = edadgestacionalbebereceptor;
+       this.tallabebereceptor = tallabebereceptor;
+       this.pesobebereceptor = pesobebereceptor;
+       this.perimetroencefalicobebereceptor = perimetroencefalicobebereceptor;
        this.observaciones = observaciones;
     }
    
@@ -57,8 +57,8 @@ public class Seguimientobebereceptor  implements java.io.Serializable {
 
     
     @AttributeOverrides( {
-        @AttributeOverride(name="idSegBebeReceptor", column=@Column(name="idSegBebeReceptor", nullable=false) ), 
-        @AttributeOverride(name="idBebeReceptor", column=@Column(name="idBebeReceptor", nullable=false) ) } )
+        @AttributeOverride(name="idsegbebereceptor", column=@Column(name="idsegbebereceptor", nullable=false) ), 
+        @AttributeOverride(name="idbebereceptor", column=@Column(name="idbebereceptor", nullable=false) ) } )
     public SeguimientobebereceptorId getId() {
         return this.id;
     }
@@ -68,7 +68,7 @@ public class Seguimientobebereceptor  implements java.io.Serializable {
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="idBebeReceptor", nullable=false, insertable=false, updatable=false)
+    @JoinColumn(name="idbebereceptor", nullable=false, insertable=false, updatable=false)
     public Bebereceptor getBebereceptor() {
         return this.bebereceptor;
     }
@@ -78,53 +78,53 @@ public class Seguimientobebereceptor  implements java.io.Serializable {
     }
 
     @Temporal(TemporalType.DATE)
-    @Column(name="fechSegBebeReceptor", length=13)
-    public Date getFechSegBebeReceptor() {
-        return this.fechSegBebeReceptor;
+    @Column(name="fechsegbebereceptor", length=13)
+    public Date getFechsegbebereceptor() {
+        return this.fechsegbebereceptor;
     }
     
-    public void setFechSegBebeReceptor(Date fechSegBebeReceptor) {
-        this.fechSegBebeReceptor = fechSegBebeReceptor;
-    }
-
-    
-    @Column(name="edadGestacionalBebeReceptor")
-    public Integer getEdadGestacionalBebeReceptor() {
-        return this.edadGestacionalBebeReceptor;
-    }
-    
-    public void setEdadGestacionalBebeReceptor(Integer edadGestacionalBebeReceptor) {
-        this.edadGestacionalBebeReceptor = edadGestacionalBebeReceptor;
+    public void setFechsegbebereceptor(Date fechsegbebereceptor) {
+        this.fechsegbebereceptor = fechsegbebereceptor;
     }
 
     
-    @Column(name="tallaBebeReceptor", precision=17, scale=17)
-    public Double getTallaBebeReceptor() {
-        return this.tallaBebeReceptor;
+    @Column(name="edadgestacionalbebereceptor")
+    public Integer getEdadgestacionalbebereceptor() {
+        return this.edadgestacionalbebereceptor;
     }
     
-    public void setTallaBebeReceptor(Double tallaBebeReceptor) {
-        this.tallaBebeReceptor = tallaBebeReceptor;
-    }
-
-    
-    @Column(name="pesoBebeReceptor", precision=17, scale=17)
-    public Double getPesoBebeReceptor() {
-        return this.pesoBebeReceptor;
-    }
-    
-    public void setPesoBebeReceptor(Double pesoBebeReceptor) {
-        this.pesoBebeReceptor = pesoBebeReceptor;
+    public void setEdadgestacionalbebereceptor(Integer edadgestacionalbebereceptor) {
+        this.edadgestacionalbebereceptor = edadgestacionalbebereceptor;
     }
 
     
-    @Column(name="perimetroEncefalicoBebeReceptor", precision=17, scale=17)
-    public Double getPerimetroEncefalicoBebeReceptor() {
-        return this.perimetroEncefalicoBebeReceptor;
+    @Column(name="tallabebereceptor", precision=17, scale=17)
+    public Double getTallabebereceptor() {
+        return this.tallabebereceptor;
     }
     
-    public void setPerimetroEncefalicoBebeReceptor(Double perimetroEncefalicoBebeReceptor) {
-        this.perimetroEncefalicoBebeReceptor = perimetroEncefalicoBebeReceptor;
+    public void setTallabebereceptor(Double tallabebereceptor) {
+        this.tallabebereceptor = tallabebereceptor;
+    }
+
+    
+    @Column(name="pesobebereceptor", precision=17, scale=17)
+    public Double getPesobebereceptor() {
+        return this.pesobebereceptor;
+    }
+    
+    public void setPesobebereceptor(Double pesobebereceptor) {
+        this.pesobebereceptor = pesobebereceptor;
+    }
+
+    
+    @Column(name="perimetroencefalicobebereceptor", precision=17, scale=17)
+    public Double getPerimetroencefalicobebereceptor() {
+        return this.perimetroencefalicobebereceptor;
+    }
+    
+    public void setPerimetroencefalicobebereceptor(Double perimetroencefalicobebereceptor) {
+        this.perimetroencefalicobebereceptor = perimetroencefalicobebereceptor;
     }
 
     

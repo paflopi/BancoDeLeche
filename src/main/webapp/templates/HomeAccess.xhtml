@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"    
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      >
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <ui:composition>
+            <nav class="container">
+                <nav class="row">
+                    <nav class="col-md-4">
+                        <img src='#{facesContext.externalContext.requestContextPath}/resources/img/edificio.png' class="img-responsive animated fadeInLeft" />
+                    </nav>
+                    <nav class='col-md-8 animated fadeInRight'>
+                        <h1>Bienvenido! #{mbSession.usuario}</h1>
+                        <p>
+                            Realice con comodidad las operaciones diarias. 
+                        </p>
+                    </nav>
+                </nav>
+            </nav>
+        </ui:composition>
+    </body>
+</html>

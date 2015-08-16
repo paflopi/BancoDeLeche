@@ -1,25 +1,25 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 30-jun-2015 0:45:24 by Hibernate Tools 4.3.1 -->
+<!-- Generated 06-jul-2015 22:01:22 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="org.blh.habilitacion.entities.Serologia" table="serologia" schema="public" optimistic-lock="version">
         <composite-id name="id" class="org.blh.habilitacion.entities.SerologiaId">
-            <key-property name="nroSerologia" type="int">
-                <column name="nroSerologia" />
+            <key-property name="nroserologia" type="int">
+                <column name="nroserologia" />
             </key-property>
-            <key-property name="nroConcentimiento" type="int">
-                <column name="nroConcentimiento" />
+            <key-property name="nroconcentimiento" type="int">
+                <column name="nroconcentimiento" />
             </key-property>
         </composite-id>
         <many-to-one name="consentimiento" class="org.blh.habilitacion.entities.Consentimiento" update="false" insert="false" fetch="select">
-            <column name="nroConcentimiento" not-null="true" />
+            <column name="nroconcentimiento" not-null="true" />
         </many-to-one>
-        <property name="fechaSerologia" type="date">
-            <column name="fechaSerologia" length="13" />
+        <property name="fechaserologia" type="date">
+            <column name="fechaserologia" length="13" />
         </property>
-        <property name="fechaCarga" type="date">
-            <column name="fechaCarga" length="13" />
+        <property name="fechacarga" type="date">
+            <column name="fechacarga" length="13" />
         </property>
         <property name="vdrl" type="boolean">
             <column name="vdrl" not-null="true" />
@@ -36,8 +36,8 @@
         <property name="hvb" type="java.lang.Boolean">
             <column name="hvb" />
         </property>
-        <property name="hvbCore" type="java.lang.Boolean">
-            <column name="hvbCore" />
+        <property name="hvbcore" type="java.lang.Boolean">
+            <column name="hvbcore" />
         </property>
         <property name="toxoplasmosis" type="java.lang.Boolean">
             <column name="toxoplasmosis" />
@@ -51,23 +51,23 @@
         <property name="fuma" type="java.lang.Boolean">
             <column name="fuma" />
         </property>
-        <property name="usaDrogas" type="java.lang.Boolean">
-            <column name="usaDrogas" />
+        <property name="usadrogas" type="java.lang.Boolean">
+            <column name="usadrogas" />
         </property>
         <property name="alcohol" type="java.lang.Boolean">
             <column name="alcohol" />
         </property>
-        <property name="zonaRural" type="java.lang.Boolean">
-            <column name="zonaRural" />
+        <property name="zonarural" type="java.lang.Boolean">
+            <column name="zonarural" />
         </property>
         <property name="vacunas" type="java.lang.Boolean">
             <column name="vacunas" />
         </property>
-        <property name="igM" type="string">
-            <column name="igM" length="10" />
+        <property name="igm" type="string">
+            <column name="igm" length="10" />
         </property>
-        <property name="igG" type="string">
-            <column name="igG" length="10" />
+        <property name="igg" type="string">
+            <column name="igg" length="10" />
         </property>
         <property name="droga" type="string">
             <column name="droga" length="18" />
@@ -75,8 +75,8 @@
         <property name="dosis" type="string">
             <column name="dosis" length="10" not-null="true" />
         </property>
-        <property name="resultadoSerologia" type="string">
-            <column name="resultadoSerologia" length="15" />
+        <property name="resultadoserologia" type="string">
+            <column name="resultadoserologia" length="15" />
         </property>
         <property name="observaciones" type="string">
             <column name="observaciones" length="10" />

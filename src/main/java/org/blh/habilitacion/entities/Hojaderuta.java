@@ -1,5 +1,5 @@
 package org.blh.habilitacion.entities;
-// Generated 30-jun-2015 0:45:21 by Hibernate Tools 4.3.1
+// Generated 06-jul-2015 22:01:19 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -24,9 +24,9 @@ import javax.persistence.TemporalType;
 public class Hojaderuta  implements java.io.Serializable {
 
 
-     private int idHojadeRuta;
-     private Date fecCreacionHdR;
-     private Date fecRecorrido;
+     private int idhojaderuta;
+     private Date feccreacionhdr;
+     private Date fecrecorrido;
      private String chofer;
      private String asistente;
      private String observaciones;
@@ -36,13 +36,13 @@ public class Hojaderuta  implements java.io.Serializable {
     }
 
 	
-    public Hojaderuta(int idHojadeRuta) {
-        this.idHojadeRuta = idHojadeRuta;
+    public Hojaderuta(int idhojaderuta) {
+        this.idhojaderuta = idhojaderuta;
     }
-    public Hojaderuta(int idHojadeRuta, Date fecCreacionHdR, Date fecRecorrido, String chofer, String asistente, String observaciones, Set consentimientoxhrs) {
-       this.idHojadeRuta = idHojadeRuta;
-       this.fecCreacionHdR = fecCreacionHdR;
-       this.fecRecorrido = fecRecorrido;
+    public Hojaderuta(int idhojaderuta, Date feccreacionhdr, Date fecrecorrido, String chofer, String asistente, String observaciones, Set consentimientoxhrs) {
+       this.idhojaderuta = idhojaderuta;
+       this.feccreacionhdr = feccreacionhdr;
+       this.fecrecorrido = fecrecorrido;
        this.chofer = chofer;
        this.asistente = asistente;
        this.observaciones = observaciones;
@@ -52,33 +52,33 @@ public class Hojaderuta  implements java.io.Serializable {
      @Id 
 
     
-    @Column(name="idHojadeRuta", nullable=false)
-    public int getIdHojadeRuta() {
-        return this.idHojadeRuta;
+    @Column(name="idhojaderuta", unique=true, nullable=false)
+    public int getIdhojaderuta() {
+        return this.idhojaderuta;
     }
     
-    public void setIdHojadeRuta(int idHojadeRuta) {
-        this.idHojadeRuta = idHojadeRuta;
+    public void setIdhojaderuta(int idhojaderuta) {
+        this.idhojaderuta = idhojaderuta;
     }
 
     @Temporal(TemporalType.DATE)
-    @Column(name="fecCreacionHdR", length=13)
-    public Date getFecCreacionHdR() {
-        return this.fecCreacionHdR;
+    @Column(name="feccreacionhdr", length=13)
+    public Date getFeccreacionhdr() {
+        return this.feccreacionhdr;
     }
     
-    public void setFecCreacionHdR(Date fecCreacionHdR) {
-        this.fecCreacionHdR = fecCreacionHdR;
+    public void setFeccreacionhdr(Date feccreacionhdr) {
+        this.feccreacionhdr = feccreacionhdr;
     }
 
     @Temporal(TemporalType.DATE)
-    @Column(name="fecRecorrido", length=13)
-    public Date getFecRecorrido() {
-        return this.fecRecorrido;
+    @Column(name="fecrecorrido", length=13)
+    public Date getFecrecorrido() {
+        return this.fecrecorrido;
     }
     
-    public void setFecRecorrido(Date fecRecorrido) {
-        this.fecRecorrido = fecRecorrido;
+    public void setFecrecorrido(Date fecrecorrido) {
+        this.fecrecorrido = fecrecorrido;
     }
 
     

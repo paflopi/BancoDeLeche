@@ -1,5 +1,5 @@
 package org.blh.habilitacion.entities;
-// Generated 30-jun-2015 0:45:21 by Hibernate Tools 4.3.1
+// Generated 06-jul-2015 22:01:19 by Hibernate Tools 4.3.1
 
 
 import javax.persistence.Column;
@@ -12,36 +12,36 @@ import javax.persistence.Embeddable;
 public class ConsentimientoxhrId  implements java.io.Serializable {
 
 
-     private int nroConcentimiento;
-     private int idHojadeRuta;
+     private int nroconcentimiento;
+     private int idhojaderuta;
 
     public ConsentimientoxhrId() {
     }
 
-    public ConsentimientoxhrId(int nroConcentimiento, int idHojadeRuta) {
-       this.nroConcentimiento = nroConcentimiento;
-       this.idHojadeRuta = idHojadeRuta;
+    public ConsentimientoxhrId(int nroconcentimiento, int idhojaderuta) {
+       this.nroconcentimiento = nroconcentimiento;
+       this.idhojaderuta = idhojaderuta;
     }
    
 
 
-    @Column(name="nroConcentimiento", nullable=false)
-    public int getNroConcentimiento() {
-        return this.nroConcentimiento;
+    @Column(name="nroconcentimiento", nullable=false)
+    public int getNroconcentimiento() {
+        return this.nroconcentimiento;
     }
     
-    public void setNroConcentimiento(int nroConcentimiento) {
-        this.nroConcentimiento = nroConcentimiento;
+    public void setNroconcentimiento(int nroconcentimiento) {
+        this.nroconcentimiento = nroconcentimiento;
     }
 
 
-    @Column(name="idHojadeRuta", nullable=false)
-    public int getIdHojadeRuta() {
-        return this.idHojadeRuta;
+    @Column(name="idhojaderuta", nullable=false)
+    public int getIdhojaderuta() {
+        return this.idhojaderuta;
     }
     
-    public void setIdHojadeRuta(int idHojadeRuta) {
-        this.idHojadeRuta = idHojadeRuta;
+    public void setIdhojaderuta(int idhojaderuta) {
+        this.idhojaderuta = idhojaderuta;
     }
 
 
@@ -51,15 +51,15 @@ public class ConsentimientoxhrId  implements java.io.Serializable {
 		 if ( !(other instanceof ConsentimientoxhrId) ) return false;
 		 ConsentimientoxhrId castOther = ( ConsentimientoxhrId ) other; 
          
-		 return (this.getNroConcentimiento()==castOther.getNroConcentimiento())
- && (this.getIdHojadeRuta()==castOther.getIdHojadeRuta());
+		 return (this.getNroconcentimiento()==castOther.getNroconcentimiento())
+ && (this.getIdhojaderuta()==castOther.getIdhojaderuta());
    }
    
    public int hashCode() {
          int result = 17;
          
-         result = 37 * result + this.getNroConcentimiento();
-         result = 37 * result + this.getIdHojadeRuta();
+         result = 37 * result + this.getNroconcentimiento();
+         result = 37 * result + this.getIdhojaderuta();
          return result;
    }   
 

@@ -28,18 +28,18 @@ public class CentrosController extends AbstractController<Centros> {
             Transaction tx = s.beginTransaction();
             int idMax = 0;
             Centros max = (Centros)s.createCriteria(Centros.class).addOrder(Order.desc("idCentro")).setMaxResults(1).uniqueResult();
-            if(max != null){
-                idMax = max.getIdCentro() + 1;
-            }
-            Centros p = new Centros();
-            p.setIdCentro(idMax);
-            p.setNombreCentro(nombre);
-            p.setDomicilioCentro(domicilio);
-            p.setTelefonoCentro(telefono);
-            s.persist(p);
-            tx.commit();
-            s.close();
-            resp = true;
+//            if(max != null){
+//                idMax = max.getIdCentro() + 1;
+//            }
+//            Centros p = new Centros();
+//            p.setIdCentro(idMax);
+//            p.setNombreCentro(nombre);
+//            p.setDomicilioCentro(domicilio);
+//            p.setTelefonoCentro(telefono);
+//            s.persist(p);
+//            tx.commit();
+//            s.close();
+//            resp = true;
         } catch (Exception e) {
             e.printStackTrace();
         }

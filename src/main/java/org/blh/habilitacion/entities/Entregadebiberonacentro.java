@@ -1,5 +1,5 @@
 package org.blh.habilitacion.entities;
-// Generated 30-jun-2015 0:45:21 by Hibernate Tools 4.3.1
+// Generated 06-jul-2015 22:01:19 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -50,8 +50,8 @@ public class Entregadebiberonacentro  implements java.io.Serializable {
 
     
     @AttributeOverrides( {
-        @AttributeOverride(name="idCentro", column=@Column(name="idCentro", nullable=false) ), 
-        @AttributeOverride(name="idBiberon", column=@Column(name="idBiberon", nullable=false) ) } )
+        @AttributeOverride(name="idcentro", column=@Column(name="idcentro", nullable=false) ), 
+        @AttributeOverride(name="idbiberon", column=@Column(name="idbiberon", nullable=false) ) } )
     public EntregadebiberonacentroId getId() {
         return this.id;
     }
@@ -61,7 +61,7 @@ public class Entregadebiberonacentro  implements java.io.Serializable {
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="idBiberon", nullable=false, insertable=false, updatable=false)
+    @JoinColumn(name="idbiberon", nullable=false, insertable=false, updatable=false)
     public Biberon getBiberon() {
         return this.biberon;
     }
@@ -71,7 +71,7 @@ public class Entregadebiberonacentro  implements java.io.Serializable {
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="idCentro", nullable=false, insertable=false, updatable=false)
+    @JoinColumn(name="idcentro", nullable=false, insertable=false, updatable=false)
     public Centros getCentros() {
         return this.centros;
     }

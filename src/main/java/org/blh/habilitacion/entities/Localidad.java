@@ -1,13 +1,15 @@
 package org.blh.habilitacion.entities;
-// Generated 30-jun-2015 0:45:21 by Hibernate Tools 4.3.1
+// Generated 06-jul-2015 22:01:19 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
 import java.util.Set;
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -23,7 +25,7 @@ import javax.persistence.Table;
 public class Localidad  implements java.io.Serializable {
 
 
-     private int idLocalidad;
+     private LocalidadId id;
      private Provincia provincia;
      private String nombreLocalidad;
      private Integer cp;
@@ -33,33 +35,35 @@ public class Localidad  implements java.io.Serializable {
     }
 
 	
-    public Localidad(int idLocalidad, Provincia provincia, String nombreLocalidad) {
-        this.idLocalidad = idLocalidad;
+    public Localidad(LocalidadId id, Provincia provincia, String nombreLocalidad) {
+        this.id = id;
         this.provincia = provincia;
         this.nombreLocalidad = nombreLocalidad;
     }
-    public Localidad(int idLocalidad, Provincia provincia, String nombreLocalidad, Integer cp, Set zonas) {
-       this.idLocalidad = idLocalidad;
+    public Localidad(LocalidadId id, Provincia provincia, String nombreLocalidad, Integer cp, Set zonas) {
+       this.id = id;
        this.provincia = provincia;
        this.nombreLocalidad = nombreLocalidad;
        this.cp = cp;
        this.zonas = zonas;
     }
    
-     @Id 
+     @EmbeddedId
 
     
-    @Column(name="idLocalidad", nullable=false)
-    public int getIdLocalidad() {
-        return this.idLocalidad;
+    @AttributeOverrides( {
+        @AttributeOverride(name="idlocalidad", column=@Column(name="idlocalidad", nullable=false) ), 
+        @AttributeOverride(name="idprovincia", column=@Column(name="idprovincia", nullable=false) ) } )
+    public LocalidadId getId() {
+        return this.id;
     }
     
-    public void setIdLocalidad(int idLocalidad) {
-        this.idLocalidad = idLocalidad;
+    public void setId(LocalidadId id) {
+        this.id = id;
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="idProvincia", nullable=false)
+    @JoinColumn(name="idprovincia", nullable=false, insertable=false, updatable=false)
     public Provincia getProvincia() {
         return this.provincia;
     }

@@ -1,39 +1,41 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 30-jun-2015 0:45:24 by Hibernate Tools 4.3.1 -->
+<!-- Generated 06-jul-2015 22:01:22 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="org.blh.habilitacion.entities.Consentimiento" table="consentimiento" schema="public" optimistic-lock="version">
-        <id name="nroConcentimiento" type="int">
-            <column name="nroConcentimiento" />
+        <id name="nroconcentimiento" type="int">
+            <column name="nroconcentimiento" />
             <generator class="assigned" />
         </id>
         <many-to-one name="centros" class="org.blh.habilitacion.entities.Centros" fetch="select">
-            <column name="idCentro" />
+            <column name="idcentro" />
         </many-to-one>
         <many-to-one name="donante" class="org.blh.habilitacion.entities.Donante" fetch="select">
-            <column name="nroDonante" not-null="true" />
+            <column name="nrodonante" not-null="true" />
         </many-to-one>
         <many-to-one name="zona" class="org.blh.habilitacion.entities.Zona" fetch="select">
-            <column name="idZona" not-null="true" />
+            <column name="idzona" not-null="true" />
+            <column name="idlocalidad" not-null="true" />
+            <column name="idprovincia" not-null="true" />
         </many-to-one>
-        <property name="fechaDesde" type="date">
-            <column name="fechaDesde" length="13" />
+        <property name="fechadesde" type="date">
+            <column name="fechadesde" length="13" />
         </property>
-        <property name="fechaHasta" type="date">
-            <column name="fechaHasta" length="13" />
+        <property name="fechahasta" type="date">
+            <column name="fechahasta" length="13" />
         </property>
-        <property name="diasyHorarios" type="timestamp">
-            <column name="diasyHorarios" length="29" />
+        <property name="diasyhorarios" type="timestamp">
+            <column name="diasyhorarios" length="29" />
         </property>
-        <property name="fechNacBebeAsociado" type="date">
-            <column name="fechNacBebeAsociado" length="13" />
+        <property name="fechnacbebeasociado" type="date">
+            <column name="fechnacbebeasociado" length="13" />
         </property>
-        <property name="edadGestacionalBebeAsociado" type="java.lang.Long">
-            <column name="edadGestacionalBebeAsociado" precision="10" scale="0" />
+        <property name="edadgestacionalbebeasociado" type="java.lang.Long">
+            <column name="edadgestacionalbebeasociado" precision="10" scale="0" />
         </property>
-        <property name="lugarNacBebeAsociado" type="date">
-            <column name="lugarNacBebeAsociado" length="13" />
+        <property name="lugarnacbebeasociado" type="date">
+            <column name="lugarnacbebeasociado" length="13" />
         </property>
         <property name="calle" type="string">
             <column name="calle" length="25" />
@@ -56,30 +58,30 @@
         <property name="departamento" type="string">
             <column name="departamento" length="10" />
         </property>
-        <property name="permiteFotos" type="java.lang.Long">
-            <column name="permiteFotos" />
+        <property name="permitefotos" type="java.lang.Long">
+            <column name="permitefotos" />
         </property>
-        <property name="cantFrascos" type="java.lang.Integer">
-            <column name="cantFrascos" />
+        <property name="cantfrascos" type="java.lang.Integer">
+            <column name="cantfrascos" />
         </property>
-        <property name="motCierreConsentimiento" type="string">
-            <column name="motCierreConsentimiento" length="30" />
+        <property name="motcierreconsentimiento" type="string">
+            <column name="motcierreconsentimiento" length="30" />
         </property>
         <set name="consentimientoxhrs" table="consentimientoxhr" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="nroConcentimiento" not-null="true" />
+                <column name="nroconcentimiento" not-null="true" />
             </key>
             <one-to-many class="org.blh.habilitacion.entities.Consentimientoxhr" />
         </set>
         <set name="serologias" table="serologia" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="nroConcentimiento" not-null="true" />
+                <column name="nroconcentimiento" not-null="true" />
             </key>
             <one-to-many class="org.blh.habilitacion.entities.Serologia" />
         </set>
         <set name="bebeasociados" table="bebeasociado" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="nroConcentimiento" not-null="true" />
+                <column name="nroconcentimiento" not-null="true" />
             </key>
             <one-to-many class="org.blh.habilitacion.entities.Bebeasociado" />
         </set>

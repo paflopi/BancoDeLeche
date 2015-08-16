@@ -9,70 +9,59 @@ and open the template in the editor.
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"    
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:p="http://primefaces.org/ui"
       >
     <h:head>
         <title>Principal</title>
         <link rel="shortcut icon" href="../resources/icons/logo1.ico" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="stylesheet" href="../resources/css/bootstrap.css" />
-        <script type="text/javascript" src="../resources/js/jquery.js"></script>
-        <script type="text/javascript" src="../resources/js/bootstrap.js"></script>
-        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>        
     </h:head>
     <body>
         <ui:composition>
             <f:metadata>
-            <f:event type="preRenderView" listener="#{login.check()}" />
-        </f:metadata><!-- End of f:metadata -->
+                <f:event type="preRenderView" listener="#{mbSession.checkSession()}" />
+            </f:metadata>
         <!-- The metadata is important to redirect to user to correct page depending if he/she logged in before -->
-        <div class="container navbar navbar-default" style="margin-top: 10px; padding: 10px;">
-            <div class="col-md-10">
+            <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
                 <h:form>
-                    <div class="btn-group" role="group" aria-label="...">
-                            <h:commandLink action="#{windows.redirectTo('donantes.xhtml')}" type="button" styleClass="btn btn-default" value="Donantes" />
-                            <h:commandLink type="button" styleClass="btn btn-default" value="Bebés" />
-                            <h:commandLink type="button" styleClass="btn btn-default" value="Serologías" />
-                            <h:commandLink type="button" styleClass="btn btn-default" value="Hojas de Ruta" />
-                            <h:commandLink action="#{windows.redirectTo('centros.xhtml')}" type="button" styleClass="btn btn-default" value="Centros asociados" />
-                            <!-- Single button -->
-<!--                            <div class="btn-group">
-                              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Centros asociados <span class="caret"></span>
-                              </button>
-                              <ul class="dropdown-menu">
-                                <li><h:commandLink type="button" styleClass="btn btn-default" value="Listar" /></li>
-                                <li><h:commandLink type="button" styleClass="btn btn-default" value="Agregar" /></li>
-                                <li><h:commandLink type="button" styleClass="btn btn-default" value="Eliminar" /></li>
-                                <li><h:commandLink type="button" styleClass="btn btn-default" value="Modificar" /></li>
-                              </ul>
-                            </div>-->
-                            <h:commandLink type="button" styleClass="btn btn-default" value="Reactivos" />
-                            <h:commandLink type="button" styleClass="btn btn-default" value="Pasteurizaciones" />
-                            <h:commandLink type="button" styleClass="btn btn-default" value="Biberones" />
-                            <h:commandLink action="#{windows.redirectTo('provincias.xhtml')}" type="button" styleClass="btn btn-default" value="Ubicaciones" />
-                    </div>
+                     <h:commandLink action="acceso" value="Banco de Leche Humana" styleClass="navbar-brand" />
                 </h:form>
+              </div>
+              <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                  <li>
+                      <h:form>
+                          <h:commandLink action="donantes" value="Donantes" styleClass="navbar-brand" />
+                      </h:form>
+                  </li>
+                  <li>
+                      <h:form>
+                          <h:commandLink action="pasteurizaciones" value="Pasteurizaciones" styleClass="navbar-brand" />
+                      </h:form>
+                  </li>
+                  <li>
+                      <h:form>
+                          <h:commandLink action="#{mbSession.cerrarSession()}" value="Otros" styleClass="navbar-brand" />
+                      </h:form>
+                  </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                  <li>
+                      <h:form>
+                          <h:commandLink styleClass="navbar-brand" action="#{mbSession.cerrarSession()}"><span class="glyphicon glyphicon-log-in"></span> Cerrar sesión</h:commandLink>
+                      </h:form>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div class="col-md-2 pull-right">
-                <!-- Single button -->
-                <div class="btn-group pull-right">
-                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    #{login.username} <span class="caret"></span>
-                  </button>
-                  <ul class="dropdown-menu">
-                        <h:form>
-                            <li>
-                                <h:commandLink styleClass="list-group-item" actionListener="#{login.logout()}" value="Cerrar sesión">
-                                    <i class="fa fa-sign-out"></i>
-                                </h:commandLink>
-                            </li>
-                        </h:form>
-                  </ul>
-                </div>
-                <!-- End of btn-group div -->
-            </div><!-- End of col-md-3 div -->
-        </div><!-- End of navbar-default div -->
+          </nav>
+        <!-- End of nav collapse -->
         </ui:composition>
     </body>
 </html>

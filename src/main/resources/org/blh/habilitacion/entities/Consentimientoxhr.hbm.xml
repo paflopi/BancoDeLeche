@@ -1,36 +1,36 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 30-jun-2015 0:45:24 by Hibernate Tools 4.3.1 -->
+<!-- Generated 06-jul-2015 22:01:22 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="org.blh.habilitacion.entities.Consentimientoxhr" table="consentimientoxhr" schema="public" optimistic-lock="version">
         <composite-id name="id" class="org.blh.habilitacion.entities.ConsentimientoxhrId">
-            <key-property name="nroConcentimiento" type="int">
-                <column name="nroConcentimiento" />
+            <key-property name="nroconcentimiento" type="int">
+                <column name="nroconcentimiento" />
             </key-property>
-            <key-property name="idHojadeRuta" type="int">
-                <column name="idHojadeRuta" />
+            <key-property name="idhojaderuta" type="int">
+                <column name="idhojaderuta" />
             </key-property>
         </composite-id>
         <many-to-one name="consentimiento" class="org.blh.habilitacion.entities.Consentimiento" update="false" insert="false" fetch="select">
-            <column name="nroConcentimiento" not-null="true" />
+            <column name="nroconcentimiento" not-null="true" />
         </many-to-one>
         <many-to-one name="hojaderuta" class="org.blh.habilitacion.entities.Hojaderuta" update="false" insert="false" fetch="select">
-            <column name="idHojadeRuta" not-null="true" />
+            <column name="idhojaderuta" not-null="true" />
         </many-to-one>
-        <property name="cantFrascosEntregados" type="java.lang.Integer">
-            <column name="cantFrascosEntregados" />
+        <property name="cantfrascosentregados" type="java.lang.Integer">
+            <column name="cantfrascosentregados" />
         </property>
-        <property name="cantFrascosRecolectados" type="java.lang.Integer">
-            <column name="cantFrascosRecolectados" />
+        <property name="cantfrascosrecolectados" type="java.lang.Integer">
+            <column name="cantfrascosrecolectados" />
         </property>
         <property name="observaciones" type="string">
             <column name="observaciones" length="30" />
         </property>
         <set name="frascoses" table="frascos" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="nroConcentimiento" not-null="true" />
-                <column name="idHojadeRuta" not-null="true" />
+                <column name="nroconcentimiento" not-null="true" />
+                <column name="idhojaderuta" not-null="true" />
             </key>
             <one-to-many class="org.blh.habilitacion.entities.Frascos" />
         </set>

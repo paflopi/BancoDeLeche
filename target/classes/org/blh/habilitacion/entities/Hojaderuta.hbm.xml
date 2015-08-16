@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 30-jun-2015 0:45:24 by Hibernate Tools 4.3.1 -->
+<!-- Generated 06-jul-2015 22:01:22 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="org.blh.habilitacion.entities.Hojaderuta" table="hojaderuta" schema="public" optimistic-lock="version">
-        <id name="idHojadeRuta" type="int">
-            <column name="idHojadeRuta" />
+        <id name="idhojaderuta" type="int">
+            <column name="idhojaderuta" />
             <generator class="assigned" />
         </id>
-        <property name="fecCreacionHdR" type="date">
-            <column name="fecCreacionHdR" length="13" />
+        <property name="feccreacionhdr" type="date">
+            <column name="feccreacionhdr" length="13" />
         </property>
-        <property name="fecRecorrido" type="date">
-            <column name="fecRecorrido" length="13" />
+        <property name="fecrecorrido" type="date">
+            <column name="fecrecorrido" length="13" />
         </property>
         <property name="chofer" type="string">
             <column name="chofer" length="25" />
@@ -25,7 +25,7 @@
         </property>
         <set name="consentimientoxhrs" table="consentimientoxhr" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="idHojadeRuta" not-null="true" />
+                <column name="idhojaderuta" not-null="true" />
             </key>
             <one-to-many class="org.blh.habilitacion.entities.Consentimientoxhr" />
         </set>

@@ -1,46 +1,46 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 30-jun-2015 0:45:24 by Hibernate Tools 4.3.1 -->
+<!-- Generated 06-jul-2015 22:01:22 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="org.blh.habilitacion.entities.Donante" table="donante" schema="public" optimistic-lock="version">
-        <id name="nroDonante" type="int">
-            <column name="nroDonante" />
+        <id name="nrodonante" type="int">
+            <column name="nrodonante" />
             <generator class="assigned" />
         </id>
         <many-to-one name="medios" class="org.blh.habilitacion.entities.Medios" fetch="select">
-            <column name="idMedios" not-null="true" />
+            <column name="idmedios" not-null="true" />
         </many-to-one>
-        <property name="apellyNombreDonante" type="string">
-            <column name="apellyNombreDonante" length="30" not-null="true" />
+        <property name="apellynombredonante" type="string">
+            <column name="apellynombredonante" length="30" not-null="true" />
         </property>
         <property name="dni" type="string">
             <column name="dni" length="10" not-null="true" />
         </property>
-        <property name="fechNac" type="date">
-            <column name="fechNac" length="13" />
+        <property name="fechnac" type="date">
+            <column name="fechnac" length="13" />
         </property>
         <property name="telefono" type="string">
             <column name="telefono" length="15" />
         </property>
-        <property name="estadoCivil" type="string">
-            <column name="estadoCivil" length="10" />
+        <property name="estadocivil" type="string">
+            <column name="estadocivil" length="10" />
         </property>
         <property name="ocupacion" type="string">
             <column name="ocupacion" length="30" />
         </property>
-        <property name="nivelEstudio" type="string">
-            <column name="nivelEstudio" length="20" />
+        <property name="nivelestudio" type="string">
+            <column name="nivelestudio" length="20" />
         </property>
         <property name="email" type="string">
             <column name="email" length="20" />
         </property>
-        <property name="tipoDonante" type="string">
-            <column name="tipoDonante" length="15" />
+        <property name="tipodonante" type="string">
+            <column name="tipodonante" length="15" />
         </property>
         <set name="consentimientos" table="consentimiento" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="nroDonante" not-null="true" />
+                <column name="nrodonante" not-null="true" />
             </key>
             <one-to-many class="org.blh.habilitacion.entities.Consentimiento" />
         </set>

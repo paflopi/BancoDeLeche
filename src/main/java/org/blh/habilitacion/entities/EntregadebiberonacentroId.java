@@ -1,5 +1,5 @@
 package org.blh.habilitacion.entities;
-// Generated 30-jun-2015 0:45:21 by Hibernate Tools 4.3.1
+// Generated 06-jul-2015 22:01:19 by Hibernate Tools 4.3.1
 
 
 import javax.persistence.Column;
@@ -12,36 +12,36 @@ import javax.persistence.Embeddable;
 public class EntregadebiberonacentroId  implements java.io.Serializable {
 
 
-     private int idCentro;
-     private int idBiberon;
+     private int idcentro;
+     private int idbiberon;
 
     public EntregadebiberonacentroId() {
     }
 
-    public EntregadebiberonacentroId(int idCentro, int idBiberon) {
-       this.idCentro = idCentro;
-       this.idBiberon = idBiberon;
+    public EntregadebiberonacentroId(int idcentro, int idbiberon) {
+       this.idcentro = idcentro;
+       this.idbiberon = idbiberon;
     }
    
 
 
-    @Column(name="idCentro", nullable=false)
-    public int getIdCentro() {
-        return this.idCentro;
+    @Column(name="idcentro", nullable=false)
+    public int getIdcentro() {
+        return this.idcentro;
     }
     
-    public void setIdCentro(int idCentro) {
-        this.idCentro = idCentro;
+    public void setIdcentro(int idcentro) {
+        this.idcentro = idcentro;
     }
 
 
-    @Column(name="idBiberon", nullable=false)
-    public int getIdBiberon() {
-        return this.idBiberon;
+    @Column(name="idbiberon", nullable=false)
+    public int getIdbiberon() {
+        return this.idbiberon;
     }
     
-    public void setIdBiberon(int idBiberon) {
-        this.idBiberon = idBiberon;
+    public void setIdbiberon(int idbiberon) {
+        this.idbiberon = idbiberon;
     }
 
 
@@ -51,15 +51,15 @@ public class EntregadebiberonacentroId  implements java.io.Serializable {
 		 if ( !(other instanceof EntregadebiberonacentroId) ) return false;
 		 EntregadebiberonacentroId castOther = ( EntregadebiberonacentroId ) other; 
          
-		 return (this.getIdCentro()==castOther.getIdCentro())
- && (this.getIdBiberon()==castOther.getIdBiberon());
+		 return (this.getIdcentro()==castOther.getIdcentro())
+ && (this.getIdbiberon()==castOther.getIdbiberon());
    }
    
    public int hashCode() {
          int result = 17;
          
-         result = 37 * result + this.getIdCentro();
-         result = 37 * result + this.getIdBiberon();
+         result = 37 * result + this.getIdcentro();
+         result = 37 * result + this.getIdbiberon();
          return result;
    }   
 

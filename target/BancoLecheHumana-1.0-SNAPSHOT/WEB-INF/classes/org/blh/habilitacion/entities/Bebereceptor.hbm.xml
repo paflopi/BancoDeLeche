@@ -1,49 +1,49 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 30-jun-2015 0:45:24 by Hibernate Tools 4.3.1 -->
+<!-- Generated 06-jul-2015 22:01:22 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="org.blh.habilitacion.entities.Bebereceptor" table="bebereceptor" schema="public" optimistic-lock="version">
-        <id name="idBebeReceptor" type="int">
-            <column name="idBebeReceptor" />
+        <id name="idbebereceptor" type="int">
+            <column name="idbebereceptor" />
             <generator class="assigned" />
         </id>
-        <property name="dniBebeReceptor" type="string">
-            <column name="dniBebeReceptor" length="10" />
+        <property name="dnibebereceptor" type="string">
+            <column name="dnibebereceptor" length="10" />
         </property>
-        <property name="apellyNombreBebeReceptor" type="string">
-            <column name="apellyNombreBebeReceptor" length="25" />
+        <property name="apellynombrebebereceptor" type="string">
+            <column name="apellynombrebebereceptor" length="25" />
         </property>
-        <property name="fehcaDeNac" type="date">
-            <column name="fehcaDeNac" length="13" />
+        <property name="fehcadenac" type="date">
+            <column name="fehcadenac" length="13" />
         </property>
-        <property name="lugarNac" type="string">
-            <column name="lugarNac" length="25" />
+        <property name="lugarnac" type="string">
+            <column name="lugarnac" length="25" />
         </property>
-        <property name="nombreMade" type="string">
-            <column name="nombreMade" length="18" not-null="true" />
+        <property name="nombremadre" type="string">
+            <column name="nombremadre" length="18" not-null="true" />
         </property>
-        <property name="nombrePadre" type="string">
-            <column name="nombrePadre" length="10" />
+        <property name="nombrepadre" type="string">
+            <column name="nombrepadre" length="10" />
         </property>
         <property name="direccion" type="string">
             <column name="direccion" length="10" />
         </property>
-        <property name="consumoLecheBanco" type="java.lang.Boolean">
-            <column name="consumoLecheBanco" />
+        <property name="consumolechebanco" type="java.lang.Boolean">
+            <column name="consumolechebanco" />
         </property>
-        <property name="motNoConsumo" type="string">
-            <column name="motNoConsumo" length="30" />
+        <property name="motnoconsumo" type="string">
+            <column name="motnoconsumo" length="30" />
         </property>
         <set name="fraccionamientos" table="fraccionamiento" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="idBebeReceptor" not-null="true" />
+                <column name="idbebereceptor" not-null="true" />
             </key>
             <one-to-many class="org.blh.habilitacion.entities.Fraccionamiento" />
         </set>
         <set name="seguimientobebereceptors" table="seguimientobebereceptor" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="idBebeReceptor" not-null="true" />
+                <column name="idbebereceptor" not-null="true" />
             </key>
             <one-to-many class="org.blh.habilitacion.entities.Seguimientobebereceptor" />
         </set>

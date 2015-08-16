@@ -1,5 +1,5 @@
 package org.blh.habilitacion.entities;
-// Generated 30-jun-2015 0:45:21 by Hibernate Tools 4.3.1
+// Generated 06-jul-2015 22:01:19 by Hibernate Tools 4.3.1
 
 
 import javax.persistence.Column;
@@ -12,36 +12,36 @@ import javax.persistence.Embeddable;
 public class SerologiaId  implements java.io.Serializable {
 
 
-     private int nroSerologia;
-     private int nroConcentimiento;
+     private int nroserologia;
+     private int nroconcentimiento;
 
     public SerologiaId() {
     }
 
-    public SerologiaId(int nroSerologia, int nroConcentimiento) {
-       this.nroSerologia = nroSerologia;
-       this.nroConcentimiento = nroConcentimiento;
+    public SerologiaId(int nroserologia, int nroconcentimiento) {
+       this.nroserologia = nroserologia;
+       this.nroconcentimiento = nroconcentimiento;
     }
    
 
 
-    @Column(name="nroSerologia", nullable=false)
-    public int getNroSerologia() {
-        return this.nroSerologia;
+    @Column(name="nroserologia", nullable=false)
+    public int getNroserologia() {
+        return this.nroserologia;
     }
     
-    public void setNroSerologia(int nroSerologia) {
-        this.nroSerologia = nroSerologia;
+    public void setNroserologia(int nroserologia) {
+        this.nroserologia = nroserologia;
     }
 
 
-    @Column(name="nroConcentimiento", nullable=false)
-    public int getNroConcentimiento() {
-        return this.nroConcentimiento;
+    @Column(name="nroconcentimiento", nullable=false)
+    public int getNroconcentimiento() {
+        return this.nroconcentimiento;
     }
     
-    public void setNroConcentimiento(int nroConcentimiento) {
-        this.nroConcentimiento = nroConcentimiento;
+    public void setNroconcentimiento(int nroconcentimiento) {
+        this.nroconcentimiento = nroconcentimiento;
     }
 
 
@@ -51,15 +51,15 @@ public class SerologiaId  implements java.io.Serializable {
 		 if ( !(other instanceof SerologiaId) ) return false;
 		 SerologiaId castOther = ( SerologiaId ) other; 
          
-		 return (this.getNroSerologia()==castOther.getNroSerologia())
- && (this.getNroConcentimiento()==castOther.getNroConcentimiento());
+		 return (this.getNroserologia()==castOther.getNroserologia())
+ && (this.getNroconcentimiento()==castOther.getNroconcentimiento());
    }
    
    public int hashCode() {
          int result = 17;
          
-         result = 37 * result + this.getNroSerologia();
-         result = 37 * result + this.getNroConcentimiento();
+         result = 37 * result + this.getNroserologia();
+         result = 37 * result + this.getNroconcentimiento();
          return result;
    }   
 

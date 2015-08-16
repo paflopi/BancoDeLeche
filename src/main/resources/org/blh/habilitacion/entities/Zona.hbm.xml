@@ -1,21 +1,29 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 30-jun-2015 0:45:24 by Hibernate Tools 4.3.1 -->
+<!-- Generated 06-jul-2015 22:01:22 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="org.blh.habilitacion.entities.Zona" table="zona" schema="public" optimistic-lock="version">
-        <id name="idZona" type="int">
-            <column name="idZona" />
-            <generator class="assigned" />
-        </id>
-        <many-to-one name="localidad" class="org.blh.habilitacion.entities.Localidad" fetch="select">
-            <column name="idLocalidad" not-null="true" />
+        <composite-id name="id" class="org.blh.habilitacion.entities.ZonaId">
+            <key-property name="idzona" type="int">
+                <column name="idzona" />
+            </key-property>
+            <key-property name="idlocalidad" type="int">
+                <column name="idlocalidad" />
+            </key-property>
+            <key-property name="idprovincia" type="int">
+                <column name="idprovincia" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="localidad" class="org.blh.habilitacion.entities.Localidad" update="false" insert="false" fetch="select">
+            <column name="idlocalidad" not-null="true" />
+            <column name="idprovincia" not-null="true" />
         </many-to-one>
-        <property name="nombreZona" type="string">
-            <column name="nombreZona" length="30" not-null="true" />
+        <property name="nombrezona" type="string">
+            <column name="nombrezona" length="30" not-null="true" />
         </property>
-        <property name="estadoZona" type="boolean">
-            <column name="estadoZona" not-null="true" />
+        <property name="estadozona" type="boolean">
+            <column name="estadozona" not-null="true" />
         </property>
         <property name="lunes" type="java.lang.Boolean">
             <column name="lunes" />
@@ -34,7 +42,9 @@
         </property>
         <set name="consentimientos" table="consentimiento" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="idZona" not-null="true" />
+                <column name="idzona" not-null="true" />
+                <column name="idlocalidad" not-null="true" />
+                <column name="idprovincia" not-null="true" />
             </key>
             <one-to-many class="org.blh.habilitacion.entities.Consentimiento" />
         </set>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      >
+    <h:head>
+        <title>Inicio</title>
+        <link rel="shortcut icon" href="resources/icons/logo.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="resources/css/bootstrap.css" />
+        <link rel="stylesheet" href="resources/css/styles.css" />
+        <link rel="stylesheet" href="resources/css/animate.css" />
+    </h:head>
+    <h:body>
+        <section class="contenedorLogin animated flipInX" style="background-color: rgb(223,228,230)">
+            <h:form class="formulario">
+                <h2 class="text-center">Acceso</h2>
+                <img src="resources/img/people.png" class="img-responsive center-margin" style="width:128px;" />
+                <p><h:outputLabel for="txtUser">Usuario</h:outputLabel></p>
+                <p><h:inputText styleClass="form-control" id="txtUser" value="#{mbLogin.usuario}" /></p>
+                <p><h:outputLabel for="txtPass">Contraseña</h:outputLabel></p>
+                <p><h:inputSecret styleClass="form-control" id="txtPass" value="#{mbLogin.contrasenia}" /></p>
+                <h:messages styleClass="nav navbar" infoClass="alert alert-success animated bounce" errorClass="alert alert-danger animated shake" />
+                <h:commandLink action="#{mbLogin.login()}" styleClass="btn btn-default" value="Ingresar" />
+            </h:form>
+        </section>
+        <section class="footer">2015. Div ID Software. All rights reserved.</section>
+    </h:body>
+</html>

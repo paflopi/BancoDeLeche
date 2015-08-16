@@ -1,5 +1,5 @@
 package org.blh.habilitacion.entities;
-// Generated 30-jun-2015 0:45:21 by Hibernate Tools 4.3.1
+// Generated 06-jul-2015 22:01:19 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -28,7 +28,7 @@ public class Bebeasociado  implements java.io.Serializable {
      private BebeasociadoId id;
      private Consentimiento consentimiento;
      private String dni;
-     private String apellyNombreBebeAsociado;
+     private String apellynombrebebeasociado;
      private Set seguimientobebeasociados = new HashSet(0);
 
     public Bebeasociado() {
@@ -40,11 +40,11 @@ public class Bebeasociado  implements java.io.Serializable {
         this.consentimiento = consentimiento;
         this.dni = dni;
     }
-    public Bebeasociado(BebeasociadoId id, Consentimiento consentimiento, String dni, String apellyNombreBebeAsociado, Set seguimientobebeasociados) {
+    public Bebeasociado(BebeasociadoId id, Consentimiento consentimiento, String dni, String apellynombrebebeasociado, Set seguimientobebeasociados) {
        this.id = id;
        this.consentimiento = consentimiento;
        this.dni = dni;
-       this.apellyNombreBebeAsociado = apellyNombreBebeAsociado;
+       this.apellynombrebebeasociado = apellynombrebebeasociado;
        this.seguimientobebeasociados = seguimientobebeasociados;
     }
    
@@ -52,8 +52,8 @@ public class Bebeasociado  implements java.io.Serializable {
 
     
     @AttributeOverrides( {
-        @AttributeOverride(name="idBebeAosciado", column=@Column(name="idBebeAosciado", nullable=false) ), 
-        @AttributeOverride(name="nroConcentimiento", column=@Column(name="nroConcentimiento", nullable=false) ) } )
+        @AttributeOverride(name="idbebeasociado", column=@Column(name="idbebeasociado", nullable=false) ), 
+        @AttributeOverride(name="nroconcentimiento", column=@Column(name="nroconcentimiento", nullable=false) ) } )
     public BebeasociadoId getId() {
         return this.id;
     }
@@ -63,7 +63,7 @@ public class Bebeasociado  implements java.io.Serializable {
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="nroConcentimiento", nullable=false, insertable=false, updatable=false)
+    @JoinColumn(name="nroconcentimiento", nullable=false, insertable=false, updatable=false)
     public Consentimiento getConsentimiento() {
         return this.consentimiento;
     }
@@ -83,13 +83,13 @@ public class Bebeasociado  implements java.io.Serializable {
     }
 
     
-    @Column(name="apellyNombreBebeAsociado", length=25)
-    public String getApellyNombreBebeAsociado() {
-        return this.apellyNombreBebeAsociado;
+    @Column(name="apellynombrebebeasociado", length=25)
+    public String getApellynombrebebeasociado() {
+        return this.apellynombrebebeasociado;
     }
     
-    public void setApellyNombreBebeAsociado(String apellyNombreBebeAsociado) {
-        this.apellyNombreBebeAsociado = apellyNombreBebeAsociado;
+    public void setApellynombrebebeasociado(String apellynombrebebeasociado) {
+        this.apellynombrebebeasociado = apellynombrebebeasociado;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="bebeasociado")

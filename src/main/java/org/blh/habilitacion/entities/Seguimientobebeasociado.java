@@ -1,5 +1,5 @@
 package org.blh.habilitacion.entities;
-// Generated 30-jun-2015 0:45:21 by Hibernate Tools 4.3.1
+// Generated 06-jul-2015 22:01:19 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -28,42 +28,42 @@ public class Seguimientobebeasociado  implements java.io.Serializable {
 
      private SeguimientobebeasociadoId id;
      private Bebeasociado bebeasociado;
-     private Date fechSegBebeAsociado;
+     private Date fechsegbebeasociado;
      private String doctor;
-     private String alturaBebeAsociado;
-     private String pesoBebeAsociado;
-     private String perimetroEncefalicoBebeAsociado;
-     private String observacionesBebeAsoc;
+     private String alturabebeasociado;
+     private String pesobebeasociado;
+     private String perimetroencefalicobebeasociado;
+     private String observacionesbebeasoc;
 
     public Seguimientobebeasociado() {
     }
 
 	
-    public Seguimientobebeasociado(SeguimientobebeasociadoId id, Bebeasociado bebeasociado, String alturaBebeAsociado, String pesoBebeAsociado, String perimetroEncefalicoBebeAsociado) {
+    public Seguimientobebeasociado(SeguimientobebeasociadoId id, Bebeasociado bebeasociado, String alturabebeasociado, String pesobebeasociado, String perimetroencefalicobebeasociado) {
         this.id = id;
         this.bebeasociado = bebeasociado;
-        this.alturaBebeAsociado = alturaBebeAsociado;
-        this.pesoBebeAsociado = pesoBebeAsociado;
-        this.perimetroEncefalicoBebeAsociado = perimetroEncefalicoBebeAsociado;
+        this.alturabebeasociado = alturabebeasociado;
+        this.pesobebeasociado = pesobebeasociado;
+        this.perimetroencefalicobebeasociado = perimetroencefalicobebeasociado;
     }
-    public Seguimientobebeasociado(SeguimientobebeasociadoId id, Bebeasociado bebeasociado, Date fechSegBebeAsociado, String doctor, String alturaBebeAsociado, String pesoBebeAsociado, String perimetroEncefalicoBebeAsociado, String observacionesBebeAsoc) {
+    public Seguimientobebeasociado(SeguimientobebeasociadoId id, Bebeasociado bebeasociado, Date fechsegbebeasociado, String doctor, String alturabebeasociado, String pesobebeasociado, String perimetroencefalicobebeasociado, String observacionesbebeasoc) {
        this.id = id;
        this.bebeasociado = bebeasociado;
-       this.fechSegBebeAsociado = fechSegBebeAsociado;
+       this.fechsegbebeasociado = fechsegbebeasociado;
        this.doctor = doctor;
-       this.alturaBebeAsociado = alturaBebeAsociado;
-       this.pesoBebeAsociado = pesoBebeAsociado;
-       this.perimetroEncefalicoBebeAsociado = perimetroEncefalicoBebeAsociado;
-       this.observacionesBebeAsoc = observacionesBebeAsoc;
+       this.alturabebeasociado = alturabebeasociado;
+       this.pesobebeasociado = pesobebeasociado;
+       this.perimetroencefalicobebeasociado = perimetroencefalicobebeasociado;
+       this.observacionesbebeasoc = observacionesbebeasoc;
     }
    
      @EmbeddedId
 
     
     @AttributeOverrides( {
-        @AttributeOverride(name="idSeguimiento", column=@Column(name="IdSeguimiento", nullable=false) ), 
-        @AttributeOverride(name="idBebeAosciado", column=@Column(name="idBebeAosciado", nullable=false) ), 
-        @AttributeOverride(name="nroConcentimiento", column=@Column(name="nroConcentimiento", nullable=false) ) } )
+        @AttributeOverride(name="idseguimiento", column=@Column(name="Idseguimiento", nullable=false) ), 
+        @AttributeOverride(name="idbebeasociado", column=@Column(name="idbebeasociado", nullable=false) ), 
+        @AttributeOverride(name="nroconcentimiento", column=@Column(name="nroconcentimiento", nullable=false) ) } )
     public SeguimientobebeasociadoId getId() {
         return this.id;
     }
@@ -74,8 +74,8 @@ public class Seguimientobebeasociado  implements java.io.Serializable {
 
 @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumns( { 
-        @JoinColumn(name="idBebeAosciado", referencedColumnName="idBebeAosciado", nullable=false, insertable=false, updatable=false), 
-        @JoinColumn(name="nroConcentimiento", referencedColumnName="nroConcentimiento", nullable=false, insertable=false, updatable=false) } )
+        @JoinColumn(name="idbebeasociado", referencedColumnName="idbebeasociado", nullable=false, insertable=false, updatable=false), 
+        @JoinColumn(name="nroconcentimiento", referencedColumnName="nroconcentimiento", nullable=false, insertable=false, updatable=false) } )
     public Bebeasociado getBebeasociado() {
         return this.bebeasociado;
     }
@@ -85,13 +85,13 @@ public class Seguimientobebeasociado  implements java.io.Serializable {
     }
 
     @Temporal(TemporalType.DATE)
-    @Column(name="fechSegBebeAsociado", length=13)
-    public Date getFechSegBebeAsociado() {
-        return this.fechSegBebeAsociado;
+    @Column(name="fechsegbebeasociado", length=13)
+    public Date getFechsegbebeasociado() {
+        return this.fechsegbebeasociado;
     }
     
-    public void setFechSegBebeAsociado(Date fechSegBebeAsociado) {
-        this.fechSegBebeAsociado = fechSegBebeAsociado;
+    public void setFechsegbebeasociado(Date fechsegbebeasociado) {
+        this.fechsegbebeasociado = fechsegbebeasociado;
     }
 
     
@@ -105,43 +105,43 @@ public class Seguimientobebeasociado  implements java.io.Serializable {
     }
 
     
-    @Column(name="alturaBebeAsociado", nullable=false, length=10)
-    public String getAlturaBebeAsociado() {
-        return this.alturaBebeAsociado;
+    @Column(name="alturabebeasociado", nullable=false, length=10)
+    public String getAlturabebeasociado() {
+        return this.alturabebeasociado;
     }
     
-    public void setAlturaBebeAsociado(String alturaBebeAsociado) {
-        this.alturaBebeAsociado = alturaBebeAsociado;
-    }
-
-    
-    @Column(name="pesoBebeAsociado", nullable=false, length=10)
-    public String getPesoBebeAsociado() {
-        return this.pesoBebeAsociado;
-    }
-    
-    public void setPesoBebeAsociado(String pesoBebeAsociado) {
-        this.pesoBebeAsociado = pesoBebeAsociado;
+    public void setAlturabebeasociado(String alturabebeasociado) {
+        this.alturabebeasociado = alturabebeasociado;
     }
 
     
-    @Column(name="perimetroEncefalicoBebeAsociado", nullable=false, length=10)
-    public String getPerimetroEncefalicoBebeAsociado() {
-        return this.perimetroEncefalicoBebeAsociado;
+    @Column(name="pesobebeasociado", nullable=false, length=10)
+    public String getPesobebeasociado() {
+        return this.pesobebeasociado;
     }
     
-    public void setPerimetroEncefalicoBebeAsociado(String perimetroEncefalicoBebeAsociado) {
-        this.perimetroEncefalicoBebeAsociado = perimetroEncefalicoBebeAsociado;
+    public void setPesobebeasociado(String pesobebeasociado) {
+        this.pesobebeasociado = pesobebeasociado;
     }
 
     
-    @Column(name="observacionesBebeAsoc", length=50)
-    public String getObservacionesBebeAsoc() {
-        return this.observacionesBebeAsoc;
+    @Column(name="perimetroencefalicobebeasociado", nullable=false, length=10)
+    public String getPerimetroencefalicobebeasociado() {
+        return this.perimetroencefalicobebeasociado;
     }
     
-    public void setObservacionesBebeAsoc(String observacionesBebeAsoc) {
-        this.observacionesBebeAsoc = observacionesBebeAsoc;
+    public void setPerimetroencefalicobebeasociado(String perimetroencefalicobebeasociado) {
+        this.perimetroencefalicobebeasociado = perimetroencefalicobebeasociado;
+    }
+
+    
+    @Column(name="observacionesbebeasoc", length=50)
+    public String getObservacionesbebeasoc() {
+        return this.observacionesbebeasoc;
+    }
+    
+    public void setObservacionesbebeasoc(String observacionesbebeasoc) {
+        this.observacionesbebeasoc = observacionesbebeasoc;
     }
 
 

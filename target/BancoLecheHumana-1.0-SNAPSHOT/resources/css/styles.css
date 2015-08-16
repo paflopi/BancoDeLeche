@@ -50,7 +50,7 @@
 }
 .footer{
 	text-align: center;
-	color:#2a6496;
+        color:#181E27;
 	bottom: 0px;
 	margin-top: 20px;
 }
@@ -89,4 +89,19 @@
 }
 .title-leyend{
     color: #7DAAD1;
+}
+.contenedorLogin{
+    margin:20px auto 0px auto;
+    max-width: 300px;
+    border:solid 1px #CCC;
+    padding:10px;
+    border-radius: 3px;
+    background-color: red;
+}
+.center-margin{
+    margin:0 auto;
+}
+.img-litle{
+    width: 100px;
+    max-width: 200px;
 }

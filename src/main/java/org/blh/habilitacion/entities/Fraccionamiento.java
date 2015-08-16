@@ -1,5 +1,5 @@
 package org.blh.habilitacion.entities;
-// Generated 30-jun-2015 0:45:21 by Hibernate Tools 4.3.1
+// Generated 06-jul-2015 22:01:19 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -28,11 +28,11 @@ public class Fraccionamiento  implements java.io.Serializable {
      private FraccionamientoId id;
      private Bebereceptor bebereceptor;
      private Biberon biberon;
-     private Date fechFraccionamiento;
-     private String prescNutricionista;
+     private Date fechfraccionamiento;
+     private String prescnutricionista;
      private Double volumen;
      private Double consumido;
-     private String motNoConsumo;
+     private String motnoconsumo;
 
     public Fraccionamiento() {
     }
@@ -43,24 +43,24 @@ public class Fraccionamiento  implements java.io.Serializable {
         this.bebereceptor = bebereceptor;
         this.biberon = biberon;
     }
-    public Fraccionamiento(FraccionamientoId id, Bebereceptor bebereceptor, Biberon biberon, Date fechFraccionamiento, String prescNutricionista, Double volumen, Double consumido, String motNoConsumo) {
+    public Fraccionamiento(FraccionamientoId id, Bebereceptor bebereceptor, Biberon biberon, Date fechfraccionamiento, String prescnutricionista, Double volumen, Double consumido, String motnoconsumo) {
        this.id = id;
        this.bebereceptor = bebereceptor;
        this.biberon = biberon;
-       this.fechFraccionamiento = fechFraccionamiento;
-       this.prescNutricionista = prescNutricionista;
+       this.fechfraccionamiento = fechfraccionamiento;
+       this.prescnutricionista = prescnutricionista;
        this.volumen = volumen;
        this.consumido = consumido;
-       this.motNoConsumo = motNoConsumo;
+       this.motnoconsumo = motnoconsumo;
     }
    
      @EmbeddedId
 
     
     @AttributeOverrides( {
-        @AttributeOverride(name="idFraccionamiento", column=@Column(name="idFraccionamiento", nullable=false) ), 
-        @AttributeOverride(name="idBebeReceptor", column=@Column(name="idBebeReceptor", nullable=false) ), 
-        @AttributeOverride(name="idBiberon", column=@Column(name="idBiberon", nullable=false) ) } )
+        @AttributeOverride(name="idfraccionamiento", column=@Column(name="idfraccionamiento", nullable=false) ), 
+        @AttributeOverride(name="idbebereceptor", column=@Column(name="idbebereceptor", nullable=false) ), 
+        @AttributeOverride(name="idbiberon", column=@Column(name="idbiberon", nullable=false) ) } )
     public FraccionamientoId getId() {
         return this.id;
     }
@@ -70,7 +70,7 @@ public class Fraccionamiento  implements java.io.Serializable {
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="idBebeReceptor", nullable=false, insertable=false, updatable=false)
+    @JoinColumn(name="idbebereceptor", nullable=false, insertable=false, updatable=false)
     public Bebereceptor getBebereceptor() {
         return this.bebereceptor;
     }
@@ -80,7 +80,7 @@ public class Fraccionamiento  implements java.io.Serializable {
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="idBiberon", nullable=false, insertable=false, updatable=false)
+    @JoinColumn(name="idbiberon", nullable=false, insertable=false, updatable=false)
     public Biberon getBiberon() {
         return this.biberon;
     }
@@ -90,23 +90,23 @@ public class Fraccionamiento  implements java.io.Serializable {
     }
 
     @Temporal(TemporalType.DATE)
-    @Column(name="fechFraccionamiento", length=13)
-    public Date getFechFraccionamiento() {
-        return this.fechFraccionamiento;
+    @Column(name="fechfraccionamiento", length=13)
+    public Date getFechfraccionamiento() {
+        return this.fechfraccionamiento;
     }
     
-    public void setFechFraccionamiento(Date fechFraccionamiento) {
-        this.fechFraccionamiento = fechFraccionamiento;
+    public void setFechfraccionamiento(Date fechfraccionamiento) {
+        this.fechfraccionamiento = fechfraccionamiento;
     }
 
     
-    @Column(name="prescNutricionista", length=10)
-    public String getPrescNutricionista() {
-        return this.prescNutricionista;
+    @Column(name="prescnutricionista", length=10)
+    public String getPrescnutricionista() {
+        return this.prescnutricionista;
     }
     
-    public void setPrescNutricionista(String prescNutricionista) {
-        this.prescNutricionista = prescNutricionista;
+    public void setPrescnutricionista(String prescnutricionista) {
+        this.prescnutricionista = prescnutricionista;
     }
 
     
@@ -130,13 +130,13 @@ public class Fraccionamiento  implements java.io.Serializable {
     }
 
     
-    @Column(name="motNoConsumo", length=30)
-    public String getMotNoConsumo() {
-        return this.motNoConsumo;
+    @Column(name="motnoconsumo", length=30)
+    public String getMotnoconsumo() {
+        return this.motnoconsumo;
     }
     
-    public void setMotNoConsumo(String motNoConsumo) {
-        this.motNoConsumo = motNoConsumo;
+    public void setMotnoconsumo(String motnoconsumo) {
+        this.motnoconsumo = motnoconsumo;
     }
 
 

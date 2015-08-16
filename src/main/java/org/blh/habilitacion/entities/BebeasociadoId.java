@@ -1,5 +1,5 @@
 package org.blh.habilitacion.entities;
-// Generated 30-jun-2015 0:45:21 by Hibernate Tools 4.3.1
+// Generated 06-jul-2015 22:01:19 by Hibernate Tools 4.3.1
 
 
 import javax.persistence.Column;
@@ -12,36 +12,36 @@ import javax.persistence.Embeddable;
 public class BebeasociadoId  implements java.io.Serializable {
 
 
-     private int idBebeAosciado;
-     private int nroConcentimiento;
+     private int idbebeasociado;
+     private int nroconcentimiento;
 
     public BebeasociadoId() {
     }
 
-    public BebeasociadoId(int idBebeAosciado, int nroConcentimiento) {
-       this.idBebeAosciado = idBebeAosciado;
-       this.nroConcentimiento = nroConcentimiento;
+    public BebeasociadoId(int idbebeasociado, int nroconcentimiento) {
+       this.idbebeasociado = idbebeasociado;
+       this.nroconcentimiento = nroconcentimiento;
     }
    
 
 
-    @Column(name="idBebeAosciado", nullable=false)
-    public int getIdBebeAosciado() {
-        return this.idBebeAosciado;
+    @Column(name="idbebeasociado", nullable=false)
+    public int getIdbebeasociado() {
+        return this.idbebeasociado;
     }
     
-    public void setIdBebeAosciado(int idBebeAosciado) {
-        this.idBebeAosciado = idBebeAosciado;
+    public void setIdbebeasociado(int idbebeasociado) {
+        this.idbebeasociado = idbebeasociado;
     }
 
 
-    @Column(name="nroConcentimiento", nullable=false)
-    public int getNroConcentimiento() {
-        return this.nroConcentimiento;
+    @Column(name="nroconcentimiento", nullable=false)
+    public int getNroconcentimiento() {
+        return this.nroconcentimiento;
     }
     
-    public void setNroConcentimiento(int nroConcentimiento) {
-        this.nroConcentimiento = nroConcentimiento;
+    public void setNroconcentimiento(int nroconcentimiento) {
+        this.nroconcentimiento = nroconcentimiento;
     }
 
 
@@ -51,15 +51,15 @@ public class BebeasociadoId  implements java.io.Serializable {
 		 if ( !(other instanceof BebeasociadoId) ) return false;
 		 BebeasociadoId castOther = ( BebeasociadoId ) other; 
          
-		 return (this.getIdBebeAosciado()==castOther.getIdBebeAosciado())
- && (this.getNroConcentimiento()==castOther.getNroConcentimiento());
+		 return (this.getIdbebeasociado()==castOther.getIdbebeasociado())
+ && (this.getNroconcentimiento()==castOther.getNroconcentimiento());
    }
    
    public int hashCode() {
          int result = 17;
          
-         result = 37 * result + this.getIdBebeAosciado();
-         result = 37 * result + this.getNroConcentimiento();
+         result = 37 * result + this.getIdbebeasociado();
+         result = 37 * result + this.getNroconcentimiento();
          return result;
    }   
 

@@ -1,21 +1,21 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 30-jun-2015 0:45:24 by Hibernate Tools 4.3.1 -->
+<!-- Generated 06-jul-2015 22:01:22 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="org.blh.habilitacion.entities.Biberon" table="biberon" schema="public" optimistic-lock="version">
-        <id name="idBiberon" type="int">
-            <column name="idBiberon" />
+        <id name="idbiberon" type="int">
+            <column name="idbiberon" />
             <generator class="assigned" />
         </id>
         <many-to-one name="pasteurizacion" class="org.blh.habilitacion.entities.Pasteurizacion" fetch="select">
-            <column name="idPasteurizacion" not-null="true" />
+            <column name="idpasteurizacion" not-null="true" />
         </many-to-one>
-        <property name="volumenDeLeche" type="java.lang.Double">
-            <column name="volumenDeLeche" precision="17" scale="17" />
+        <property name="volumendeleche" type="java.lang.Double">
+            <column name="volumendeleche" precision="17" scale="17" />
         </property>
-        <property name="tipoDeLeche" type="java.lang.Double">
-            <column name="tipoDeLeche" precision="17" scale="17" />
+        <property name="tipodeleche" type="java.lang.Double">
+            <column name="tipodeleche" precision="17" scale="17" />
         </property>
         <property name="hematocritos" type="java.lang.Double">
             <column name="hematocritos" precision="17" scale="17" />
@@ -23,44 +23,42 @@
         <property name="crema" type="java.lang.Double">
             <column name="crema" precision="17" scale="17" />
         </property>
-        <property name="totalCol" type="java.lang.Double">
-            <column name="totalCol" precision="17" scale="17" />
+        <property name="totalcol" type="java.lang.Double">
+            <column name="totalcol" precision="17" scale="17" />
         </property>
         <property name="gordura" type="java.lang.Double">
             <column name="gordura" precision="17" scale="17" />
         </property>
         <property name="kcalxl" type="java.lang.Double">
-            <column name="kcalxl" precision="17" scale="17">
-                <comment>Se lee Kilocaloria por litro</comment>
-            </column>
+            <column name="kcalxl" precision="17" scale="17" />
         </property>
-        <property name="cultivoCal24" type="java.lang.Double">
-            <column name="cultivoCal24" precision="17" scale="17" />
+        <property name="cultivocal24" type="java.lang.Double">
+            <column name="cultivocal24" precision="17" scale="17" />
         </property>
-        <property name="cultivoCal48" type="java.lang.Double">
-            <column name="cultivoCal48" precision="17" scale="17" />
+        <property name="cultivocal48" type="java.lang.Double">
+            <column name="cultivocal48" precision="17" scale="17" />
         </property>
         <property name="estado" type="java.lang.Boolean">
             <column name="estado" />
         </property>
-        <property name="motivoRechazo" type="string">
-            <column name="motivoRechazo" length="50" />
+        <property name="motivorechazo" type="string">
+            <column name="motivorechazo" length="50" />
         </property>
         <set name="entregadebiberonacentros" table="entregadebiberonacentro" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="idBiberon" not-null="true" />
+                <column name="idbiberon" not-null="true" />
             </key>
             <one-to-many class="org.blh.habilitacion.entities.Entregadebiberonacentro" />
         </set>
         <set name="fraccionamientos" table="fraccionamiento" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="idBiberon" not-null="true" />
+                <column name="idbiberon" not-null="true" />
             </key>
             <one-to-many class="org.blh.habilitacion.entities.Fraccionamiento" />
         </set>
         <set name="frascoses" table="frascos" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="idBiberon" not-null="true" />
+                <column name="idbiberon" not-null="true" />
             </key>
             <one-to-many class="org.blh.habilitacion.entities.Frascos" />
         </set>

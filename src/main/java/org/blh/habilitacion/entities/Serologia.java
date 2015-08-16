@@ -1,5 +1,5 @@
 package org.blh.habilitacion.entities;
-// Generated 30-jun-2015 0:45:21 by Hibernate Tools 4.3.1
+// Generated 06-jul-2015 22:01:19 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -27,27 +27,27 @@ public class Serologia  implements java.io.Serializable {
 
      private SerologiaId id;
      private Consentimiento consentimiento;
-     private Date fechaSerologia;
-     private Date fechaCarga;
+     private Date fechaserologia;
+     private Date fechacarga;
      private boolean vdrl;
      private Boolean chagas;
      private Boolean hvc;
      private Boolean hiv;
      private Boolean hvb;
-     private Boolean hvbCore;
+     private Boolean hvbcore;
      private Boolean toxoplasmosis;
      private Boolean htlvlIi;
      private Boolean medicacion;
      private Boolean fuma;
-     private Boolean usaDrogas;
+     private Boolean usadrogas;
      private Boolean alcohol;
-     private Boolean zonaRural;
+     private Boolean zonarural;
      private Boolean vacunas;
-     private String igM;
-     private String igG;
+     private String igm;
+     private String igg;
      private String droga;
      private String dosis;
-     private String resultadoSerologia;
+     private String resultadoserologia;
      private String observaciones;
 
     public Serologia() {
@@ -60,30 +60,30 @@ public class Serologia  implements java.io.Serializable {
         this.vdrl = vdrl;
         this.dosis = dosis;
     }
-    public Serologia(SerologiaId id, Consentimiento consentimiento, Date fechaSerologia, Date fechaCarga, boolean vdrl, Boolean chagas, Boolean hvc, Boolean hiv, Boolean hvb, Boolean hvbCore, Boolean toxoplasmosis, Boolean htlvlIi, Boolean medicacion, Boolean fuma, Boolean usaDrogas, Boolean alcohol, Boolean zonaRural, Boolean vacunas, String igM, String igG, String droga, String dosis, String resultadoSerologia, String observaciones) {
+    public Serologia(SerologiaId id, Consentimiento consentimiento, Date fechaserologia, Date fechacarga, boolean vdrl, Boolean chagas, Boolean hvc, Boolean hiv, Boolean hvb, Boolean hvbcore, Boolean toxoplasmosis, Boolean htlvlIi, Boolean medicacion, Boolean fuma, Boolean usadrogas, Boolean alcohol, Boolean zonarural, Boolean vacunas, String igm, String igg, String droga, String dosis, String resultadoserologia, String observaciones) {
        this.id = id;
        this.consentimiento = consentimiento;
-       this.fechaSerologia = fechaSerologia;
-       this.fechaCarga = fechaCarga;
+       this.fechaserologia = fechaserologia;
+       this.fechacarga = fechacarga;
        this.vdrl = vdrl;
        this.chagas = chagas;
        this.hvc = hvc;
        this.hiv = hiv;
        this.hvb = hvb;
-       this.hvbCore = hvbCore;
+       this.hvbcore = hvbcore;
        this.toxoplasmosis = toxoplasmosis;
        this.htlvlIi = htlvlIi;
        this.medicacion = medicacion;
        this.fuma = fuma;
-       this.usaDrogas = usaDrogas;
+       this.usadrogas = usadrogas;
        this.alcohol = alcohol;
-       this.zonaRural = zonaRural;
+       this.zonarural = zonarural;
        this.vacunas = vacunas;
-       this.igM = igM;
-       this.igG = igG;
+       this.igm = igm;
+       this.igg = igg;
        this.droga = droga;
        this.dosis = dosis;
-       this.resultadoSerologia = resultadoSerologia;
+       this.resultadoserologia = resultadoserologia;
        this.observaciones = observaciones;
     }
    
@@ -91,8 +91,8 @@ public class Serologia  implements java.io.Serializable {
 
     
     @AttributeOverrides( {
-        @AttributeOverride(name="nroSerologia", column=@Column(name="nroSerologia", nullable=false) ), 
-        @AttributeOverride(name="nroConcentimiento", column=@Column(name="nroConcentimiento", nullable=false) ) } )
+        @AttributeOverride(name="nroserologia", column=@Column(name="nroserologia", nullable=false) ), 
+        @AttributeOverride(name="nroconcentimiento", column=@Column(name="nroconcentimiento", nullable=false) ) } )
     public SerologiaId getId() {
         return this.id;
     }
@@ -102,7 +102,7 @@ public class Serologia  implements java.io.Serializable {
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="nroConcentimiento", nullable=false, insertable=false, updatable=false)
+    @JoinColumn(name="nroconcentimiento", nullable=false, insertable=false, updatable=false)
     public Consentimiento getConsentimiento() {
         return this.consentimiento;
     }
@@ -112,23 +112,23 @@ public class Serologia  implements java.io.Serializable {
     }
 
     @Temporal(TemporalType.DATE)
-    @Column(name="fechaSerologia", length=13)
-    public Date getFechaSerologia() {
-        return this.fechaSerologia;
+    @Column(name="fechaserologia", length=13)
+    public Date getFechaserologia() {
+        return this.fechaserologia;
     }
     
-    public void setFechaSerologia(Date fechaSerologia) {
-        this.fechaSerologia = fechaSerologia;
+    public void setFechaserologia(Date fechaserologia) {
+        this.fechaserologia = fechaserologia;
     }
 
     @Temporal(TemporalType.DATE)
-    @Column(name="fechaCarga", length=13)
-    public Date getFechaCarga() {
-        return this.fechaCarga;
+    @Column(name="fechacarga", length=13)
+    public Date getFechacarga() {
+        return this.fechacarga;
     }
     
-    public void setFechaCarga(Date fechaCarga) {
-        this.fechaCarga = fechaCarga;
+    public void setFechacarga(Date fechacarga) {
+        this.fechacarga = fechacarga;
     }
 
     
@@ -182,13 +182,13 @@ public class Serologia  implements java.io.Serializable {
     }
 
     
-    @Column(name="hvbCore")
-    public Boolean getHvbCore() {
-        return this.hvbCore;
+    @Column(name="hvbcore")
+    public Boolean getHvbcore() {
+        return this.hvbcore;
     }
     
-    public void setHvbCore(Boolean hvbCore) {
-        this.hvbCore = hvbCore;
+    public void setHvbcore(Boolean hvbcore) {
+        this.hvbcore = hvbcore;
     }
 
     
@@ -232,13 +232,13 @@ public class Serologia  implements java.io.Serializable {
     }
 
     
-    @Column(name="usaDrogas")
-    public Boolean getUsaDrogas() {
-        return this.usaDrogas;
+    @Column(name="usadrogas")
+    public Boolean getUsadrogas() {
+        return this.usadrogas;
     }
     
-    public void setUsaDrogas(Boolean usaDrogas) {
-        this.usaDrogas = usaDrogas;
+    public void setUsadrogas(Boolean usadrogas) {
+        this.usadrogas = usadrogas;
     }
 
     
@@ -252,13 +252,13 @@ public class Serologia  implements java.io.Serializable {
     }
 
     
-    @Column(name="zonaRural")
-    public Boolean getZonaRural() {
-        return this.zonaRural;
+    @Column(name="zonarural")
+    public Boolean getZonarural() {
+        return this.zonarural;
     }
     
-    public void setZonaRural(Boolean zonaRural) {
-        this.zonaRural = zonaRural;
+    public void setZonarural(Boolean zonarural) {
+        this.zonarural = zonarural;
     }
 
     
@@ -272,23 +272,23 @@ public class Serologia  implements java.io.Serializable {
     }
 
     
-    @Column(name="igM", length=10)
-    public String getIgM() {
-        return this.igM;
+    @Column(name="igm", length=10)
+    public String getIgm() {
+        return this.igm;
     }
     
-    public void setIgM(String igM) {
-        this.igM = igM;
+    public void setIgm(String igm) {
+        this.igm = igm;
     }
 
     
-    @Column(name="igG", length=10)
-    public String getIgG() {
-        return this.igG;
+    @Column(name="igg", length=10)
+    public String getIgg() {
+        return this.igg;
     }
     
-    public void setIgG(String igG) {
-        this.igG = igG;
+    public void setIgg(String igg) {
+        this.igg = igg;
     }
 
     
@@ -312,13 +312,13 @@ public class Serologia  implements java.io.Serializable {
     }
 
     
-    @Column(name="resultadoSerologia", length=15)
-    public String getResultadoSerologia() {
-        return this.resultadoSerologia;
+    @Column(name="resultadoserologia", length=15)
+    public String getResultadoserologia() {
+        return this.resultadoserologia;
     }
     
-    public void setResultadoSerologia(String resultadoSerologia) {
-        this.resultadoSerologia = resultadoSerologia;
+    public void setResultadoserologia(String resultadoserologia) {
+        this.resultadoserologia = resultadoserologia;
     }
 
     

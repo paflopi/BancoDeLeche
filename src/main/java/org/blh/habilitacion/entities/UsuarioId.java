@@ -1,5 +1,5 @@
 package org.blh.habilitacion.entities;
-// Generated 30-jun-2015 0:45:21 by Hibernate Tools 4.3.1
+// Generated 06-jul-2015 22:01:19 by Hibernate Tools 4.3.1
 
 
 import javax.persistence.Column;
@@ -12,26 +12,26 @@ import javax.persistence.Embeddable;
 public class UsuarioId  implements java.io.Serializable {
 
 
-     private int idperfil;
+     private int idPerfil;
      private int id;
 
     public UsuarioId() {
     }
 
-    public UsuarioId(int idperfil, int id) {
-       this.idperfil = idperfil;
+    public UsuarioId(int idPerfil, int id) {
+       this.idPerfil = idPerfil;
        this.id = id;
     }
    
 
 
-    @Column(name="idperfil", nullable=false)
-    public int getIdperfil() {
-        return this.idperfil;
+    @Column(name="idPerfil", nullable=false)
+    public int getIdPerfil() {
+        return this.idPerfil;
     }
     
-    public void setIdperfil(int idperfil) {
-        this.idperfil = idperfil;
+    public void setIdPerfil(int idPerfil) {
+        this.idPerfil = idPerfil;
     }
 
 
@@ -51,14 +51,14 @@ public class UsuarioId  implements java.io.Serializable {
 		 if ( !(other instanceof UsuarioId) ) return false;
 		 UsuarioId castOther = ( UsuarioId ) other; 
          
-		 return (this.getIdperfil()==castOther.getIdperfil())
+		 return (this.getIdPerfil()==castOther.getIdPerfil())
  && (this.getId()==castOther.getId());
    }
    
    public int hashCode() {
          int result = 17;
          
-         result = 37 * result + this.getIdperfil();
+         result = 37 * result + this.getIdPerfil();
          result = 37 * result + this.getId();
          return result;
    }   

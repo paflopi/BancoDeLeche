@@ -8,6 +8,7 @@
     <property name="hibernate.connection.username">postgres</property>
     <property name="hibernate.connection.password">jajkaN17</property>
     <property name="hibernate.current_session_context_class">thread</property>
+    <property name="hibernate.format_sql">true</property>
     <mapping resource="org/blh/habilitacion/entities/Bebeasociado.hbm.xml"/>
     <mapping resource="org/blh/habilitacion/entities/Fraccionamiento.hbm.xml"/>
     <mapping resource="org/blh/habilitacion/entities/Seguimientobebeasociado.hbm.xml"/>

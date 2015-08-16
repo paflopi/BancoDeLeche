@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 30-jun-2015 0:45:24 by Hibernate Tools 4.3.1 -->
+<!-- Generated 06-jul-2015 22:01:22 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="org.blh.habilitacion.entities.Usuario" table="usuario" schema="public" optimistic-lock="version">
         <composite-id name="id" class="org.blh.habilitacion.entities.UsuarioId">
-            <key-property name="idperfil" type="int">
-                <column name="idperfil" />
+            <key-property name="idPerfil" type="int">
+                <column name="idPerfil" />
             </key-property>
             <key-property name="id" type="int">
                 <column name="id" />

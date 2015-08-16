@@ -1,15 +1,19 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 30-jun-2015 0:45:24 by Hibernate Tools 4.3.1 -->
+<!-- Generated 06-jul-2015 22:01:22 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="org.blh.habilitacion.entities.Localidad" table="localidad" schema="public" optimistic-lock="version">
-        <id name="idLocalidad" type="int">
-            <column name="idLocalidad" />
-            <generator class="assigned" />
-        </id>
-        <many-to-one name="provincia" class="org.blh.habilitacion.entities.Provincia" fetch="select">
-            <column name="idProvincia" not-null="true" />
+        <composite-id name="id" class="org.blh.habilitacion.entities.LocalidadId">
+            <key-property name="idlocalidad" type="int">
+                <column name="idlocalidad" />
+            </key-property>
+            <key-property name="idprovincia" type="int">
+                <column name="idprovincia" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="provincia" class="org.blh.habilitacion.entities.Provincia" update="false" insert="false" fetch="select">
+            <column name="idprovincia" not-null="true" />
         </many-to-one>
         <property name="nombreLocalidad" type="string">
             <column name="nombreLocalidad" length="30" not-null="true" />
@@ -19,7 +23,8 @@
         </property>
         <set name="zonas" table="zona" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="idLocalidad" not-null="true" />
+                <column name="idlocalidad" not-null="true" />
+                <column name="idprovincia" not-null="true" />
             </key>
             <one-to-many class="org.blh.habilitacion.entities.Zona" />
         </set>

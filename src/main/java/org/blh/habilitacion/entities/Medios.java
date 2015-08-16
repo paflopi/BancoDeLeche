@@ -1,5 +1,5 @@
 package org.blh.habilitacion.entities;
-// Generated 30-jun-2015 0:45:21 by Hibernate Tools 4.3.1
+// Generated 06-jul-2015 22:01:19 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -21,56 +21,56 @@ import javax.persistence.Table;
 public class Medios  implements java.io.Serializable {
 
 
-     private int idMedios;
-     private String nombreMedio;
-     private Boolean estadoMedio;
+     private int idmedios;
+     private String nombremedio;
+     private Boolean estadomedio;
      private Set donantes = new HashSet(0);
 
     public Medios() {
     }
 
 	
-    public Medios(int idMedios, String nombreMedio) {
-        this.idMedios = idMedios;
-        this.nombreMedio = nombreMedio;
+    public Medios(int idmedios, String nombremedio) {
+        this.idmedios = idmedios;
+        this.nombremedio = nombremedio;
     }
-    public Medios(int idMedios, String nombreMedio, Boolean estadoMedio, Set donantes) {
-       this.idMedios = idMedios;
-       this.nombreMedio = nombreMedio;
-       this.estadoMedio = estadoMedio;
+    public Medios(int idmedios, String nombremedio, Boolean estadomedio, Set donantes) {
+       this.idmedios = idmedios;
+       this.nombremedio = nombremedio;
+       this.estadomedio = estadomedio;
        this.donantes = donantes;
     }
    
      @Id 
 
     
-    @Column(name="idMedios", nullable=false)
-    public int getIdMedios() {
-        return this.idMedios;
+    @Column(name="idmedios", unique=true, nullable=false)
+    public int getIdmedios() {
+        return this.idmedios;
     }
     
-    public void setIdMedios(int idMedios) {
-        this.idMedios = idMedios;
-    }
-
-    
-    @Column(name="nombreMedio", nullable=false, length=15)
-    public String getNombreMedio() {
-        return this.nombreMedio;
-    }
-    
-    public void setNombreMedio(String nombreMedio) {
-        this.nombreMedio = nombreMedio;
+    public void setIdmedios(int idmedios) {
+        this.idmedios = idmedios;
     }
 
     
-    @Column(name="estadoMedio")
-    public Boolean getEstadoMedio() {
-        return this.estadoMedio;
+    @Column(name="nombremedio", nullable=false, length=15)
+    public String getNombremedio() {
+        return this.nombremedio;
     }
     
-    public void setEstadoMedio(Boolean estadoMedio) {
-        this.estadoMedio = estadoMedio;
+    public void setNombremedio(String nombremedio) {
+        this.nombremedio = nombremedio;
+    }
+
+    
+    @Column(name="estadomedio")
+    public Boolean getEstadomedio() {
+        return this.estadomedio;
+    }
+    
+    public void setEstadomedio(Boolean estadomedio) {
+        this.estadomedio = estadomedio;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="medios")

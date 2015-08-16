@@ -1,5 +1,5 @@
 package org.blh.habilitacion.entities;
-// Generated 30-jun-2015 0:45:21 by Hibernate Tools 4.3.1
+// Generated 06-jul-2015 22:01:19 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -24,55 +24,55 @@ import javax.persistence.TemporalType;
 public class Frascos  implements java.io.Serializable {
 
 
-     private int nroFrasco;
+     private int nrofrasco;
      private Biberon biberon;
      private Consentimientoxhr consentimientoxhr;
-     private Date fechaExtracion;
-     private String tipoDeLeche;
-     private String estadoDeFrasco;
-     private String volumenDeLeche;
-     private Double nivelDeAcides;
+     private Date fechaextracion;
+     private String tipodeleche;
+     private String estadodefrasco;
+     private String volumendeleche;
+     private Double niveldeacides;
      private Double hematocritos;
      private Boolean estadoFrasco;
-     private String motRechazoFrasco;
+     private String motrechazofrasco;
 
     public Frascos() {
     }
 
 	
-    public Frascos(int nroFrasco, Biberon biberon, Consentimientoxhr consentimientoxhr) {
-        this.nroFrasco = nroFrasco;
+    public Frascos(int nrofrasco, Biberon biberon, Consentimientoxhr consentimientoxhr) {
+        this.nrofrasco = nrofrasco;
         this.biberon = biberon;
         this.consentimientoxhr = consentimientoxhr;
     }
-    public Frascos(int nroFrasco, Biberon biberon, Consentimientoxhr consentimientoxhr, Date fechaExtracion, String tipoDeLeche, String estadoDeFrasco, String volumenDeLeche, Double nivelDeAcides, Double hematocritos, Boolean estadoFrasco, String motRechazoFrasco) {
-       this.nroFrasco = nroFrasco;
+    public Frascos(int nrofrasco, Biberon biberon, Consentimientoxhr consentimientoxhr, Date fechaextracion, String tipodeleche, String estadodefrasco, String volumendeleche, Double niveldeacides, Double hematocritos, Boolean estadoFrasco, String motrechazofrasco) {
+       this.nrofrasco = nrofrasco;
        this.biberon = biberon;
        this.consentimientoxhr = consentimientoxhr;
-       this.fechaExtracion = fechaExtracion;
-       this.tipoDeLeche = tipoDeLeche;
-       this.estadoDeFrasco = estadoDeFrasco;
-       this.volumenDeLeche = volumenDeLeche;
-       this.nivelDeAcides = nivelDeAcides;
+       this.fechaextracion = fechaextracion;
+       this.tipodeleche = tipodeleche;
+       this.estadodefrasco = estadodefrasco;
+       this.volumendeleche = volumendeleche;
+       this.niveldeacides = niveldeacides;
        this.hematocritos = hematocritos;
        this.estadoFrasco = estadoFrasco;
-       this.motRechazoFrasco = motRechazoFrasco;
+       this.motrechazofrasco = motrechazofrasco;
     }
    
      @Id 
 
     
-    @Column(name="nroFrasco", nullable=false)
-    public int getNroFrasco() {
-        return this.nroFrasco;
+    @Column(name="nrofrasco", unique=true, nullable=false)
+    public int getNrofrasco() {
+        return this.nrofrasco;
     }
     
-    public void setNroFrasco(int nroFrasco) {
-        this.nroFrasco = nroFrasco;
+    public void setNrofrasco(int nrofrasco) {
+        this.nrofrasco = nrofrasco;
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="idBiberon", nullable=false)
+    @JoinColumn(name="idbiberon", nullable=false)
     public Biberon getBiberon() {
         return this.biberon;
     }
@@ -83,8 +83,8 @@ public class Frascos  implements java.io.Serializable {
 
 @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumns( { 
-        @JoinColumn(name="nroConcentimiento", referencedColumnName="nroConcentimiento", nullable=false), 
-        @JoinColumn(name="idHojadeRuta", referencedColumnName="idHojadeRuta", nullable=false) } )
+        @JoinColumn(name="nroconcentimiento", referencedColumnName="nroconcentimiento", nullable=false), 
+        @JoinColumn(name="idhojaderuta", referencedColumnName="idhojaderuta", nullable=false) } )
     public Consentimientoxhr getConsentimientoxhr() {
         return this.consentimientoxhr;
     }
@@ -94,53 +94,53 @@ public class Frascos  implements java.io.Serializable {
     }
 
     @Temporal(TemporalType.DATE)
-    @Column(name="fechaExtracion", length=13)
-    public Date getFechaExtracion() {
-        return this.fechaExtracion;
+    @Column(name="fechaextracion", length=13)
+    public Date getFechaextracion() {
+        return this.fechaextracion;
     }
     
-    public void setFechaExtracion(Date fechaExtracion) {
-        this.fechaExtracion = fechaExtracion;
-    }
-
-    
-    @Column(name="tipoDeLeche", length=10)
-    public String getTipoDeLeche() {
-        return this.tipoDeLeche;
-    }
-    
-    public void setTipoDeLeche(String tipoDeLeche) {
-        this.tipoDeLeche = tipoDeLeche;
+    public void setFechaextracion(Date fechaextracion) {
+        this.fechaextracion = fechaextracion;
     }
 
     
-    @Column(name="estadoDeFrasco", length=10)
-    public String getEstadoDeFrasco() {
-        return this.estadoDeFrasco;
+    @Column(name="tipodeleche", length=10)
+    public String getTipodeleche() {
+        return this.tipodeleche;
     }
     
-    public void setEstadoDeFrasco(String estadoDeFrasco) {
-        this.estadoDeFrasco = estadoDeFrasco;
-    }
-
-    
-    @Column(name="volumenDeLeche", length=10)
-    public String getVolumenDeLeche() {
-        return this.volumenDeLeche;
-    }
-    
-    public void setVolumenDeLeche(String volumenDeLeche) {
-        this.volumenDeLeche = volumenDeLeche;
+    public void setTipodeleche(String tipodeleche) {
+        this.tipodeleche = tipodeleche;
     }
 
     
-    @Column(name="nivelDeAcides", precision=17, scale=17)
-    public Double getNivelDeAcides() {
-        return this.nivelDeAcides;
+    @Column(name="estadodefrasco", length=10)
+    public String getEstadodefrasco() {
+        return this.estadodefrasco;
     }
     
-    public void setNivelDeAcides(Double nivelDeAcides) {
-        this.nivelDeAcides = nivelDeAcides;
+    public void setEstadodefrasco(String estadodefrasco) {
+        this.estadodefrasco = estadodefrasco;
+    }
+
+    
+    @Column(name="volumendeleche", length=10)
+    public String getVolumendeleche() {
+        return this.volumendeleche;
+    }
+    
+    public void setVolumendeleche(String volumendeleche) {
+        this.volumendeleche = volumendeleche;
+    }
+
+    
+    @Column(name="niveldeacides", precision=17, scale=17)
+    public Double getNiveldeacides() {
+        return this.niveldeacides;
+    }
+    
+    public void setNiveldeacides(Double niveldeacides) {
+        this.niveldeacides = niveldeacides;
     }
 
     
@@ -164,13 +164,13 @@ public class Frascos  implements java.io.Serializable {
     }
 
     
-    @Column(name="motRechazoFrasco", length=25)
-    public String getMotRechazoFrasco() {
-        return this.motRechazoFrasco;
+    @Column(name="motrechazofrasco", length=25)
+    public String getMotrechazofrasco() {
+        return this.motrechazofrasco;
     }
     
-    public void setMotRechazoFrasco(String motRechazoFrasco) {
-        this.motRechazoFrasco = motRechazoFrasco;
+    public void setMotrechazofrasco(String motrechazofrasco) {
+        this.motrechazofrasco = motrechazofrasco;
     }
 
 

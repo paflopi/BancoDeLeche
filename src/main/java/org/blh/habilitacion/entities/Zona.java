@@ -1,14 +1,17 @@
 package org.blh.habilitacion.entities;
-// Generated 30-jun-2015 0:45:21 by Hibernate Tools 4.3.1
+// Generated 06-jul-2015 22:01:19 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
 import java.util.Set;
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -23,10 +26,10 @@ import javax.persistence.Table;
 public class Zona  implements java.io.Serializable {
 
 
-     private int idZona;
+     private ZonaId id;
      private Localidad localidad;
-     private String nombreZona;
-     private boolean estadoZona;
+     private String nombrezona;
+     private boolean estadozona;
      private Boolean lunes;
      private Boolean martes;
      private Boolean miercoles;
@@ -38,17 +41,17 @@ public class Zona  implements java.io.Serializable {
     }
 
 	
-    public Zona(int idZona, Localidad localidad, String nombreZona, boolean estadoZona) {
-        this.idZona = idZona;
+    public Zona(ZonaId id, Localidad localidad, String nombrezona, boolean estadozona) {
+        this.id = id;
         this.localidad = localidad;
-        this.nombreZona = nombreZona;
-        this.estadoZona = estadoZona;
+        this.nombrezona = nombrezona;
+        this.estadozona = estadozona;
     }
-    public Zona(int idZona, Localidad localidad, String nombreZona, boolean estadoZona, Boolean lunes, Boolean martes, Boolean miercoles, Boolean jueves, Boolean viernes, Set consentimientos) {
-       this.idZona = idZona;
+    public Zona(ZonaId id, Localidad localidad, String nombrezona, boolean estadozona, Boolean lunes, Boolean martes, Boolean miercoles, Boolean jueves, Boolean viernes, Set consentimientos) {
+       this.id = id;
        this.localidad = localidad;
-       this.nombreZona = nombreZona;
-       this.estadoZona = estadoZona;
+       this.nombrezona = nombrezona;
+       this.estadozona = estadozona;
        this.lunes = lunes;
        this.martes = martes;
        this.miercoles = miercoles;
@@ -57,20 +60,25 @@ public class Zona  implements java.io.Serializable {
        this.consentimientos = consentimientos;
     }
    
-     @Id 
+     @EmbeddedId
 
     
-    @Column(name="idZona", nullable=false)
-    public int getIdZona() {
-        return this.idZona;
+    @AttributeOverrides( {
+        @AttributeOverride(name="idzona", column=@Column(name="idzona", nullable=false) ), 
+        @AttributeOverride(name="idlocalidad", column=@Column(name="idlocalidad", nullable=false) ), 
+        @AttributeOverride(name="idprovincia", column=@Column(name="idprovincia", nullable=false) ) } )
+    public ZonaId getId() {
+        return this.id;
     }
     
-    public void setIdZona(int idZona) {
-        this.idZona = idZona;
+    public void setId(ZonaId id) {
+        this.id = id;
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="idLocalidad", nullable=false)
+    @JoinColumns( { 
+        @JoinColumn(name="idlocalidad", referencedColumnName="idlocalidad", nullable=false, insertable=false, updatable=false), 
+        @JoinColumn(name="idprovincia", referencedColumnName="idprovincia", nullable=false, insertable=false, updatable=false) } )
     public Localidad getLocalidad() {
         return this.localidad;
     }
@@ -80,23 +88,23 @@ public class Zona  implements java.io.Serializable {
     }
 
     
-    @Column(name="nombreZona", nullable=false, length=30)
-    public String getNombreZona() {
-        return this.nombreZona;
+    @Column(name="nombrezona", nullable=false, length=30)
+    public String getNombrezona() {
+        return this.nombrezona;
     }
     
-    public void setNombreZona(String nombreZona) {
-        this.nombreZona = nombreZona;
+    public void setNombrezona(String nombrezona) {
+        this.nombrezona = nombrezona;
     }
 
     
-    @Column(name="estadoZona", nullable=false)
-    public boolean isEstadoZona() {
-        return this.estadoZona;
+    @Column(name="estadozona", nullable=false)
+    public boolean isEstadozona() {
+        return this.estadozona;
     }
     
-    public void setEstadoZona(boolean estadoZona) {
-        this.estadoZona = estadoZona;
+    public void setEstadozona(boolean estadozona) {
+        this.estadozona = estadozona;
     }
 
     

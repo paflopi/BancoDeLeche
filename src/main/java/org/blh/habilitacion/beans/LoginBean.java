@@ -8,11 +8,13 @@ package org.blh.habilitacion.beans;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.ejb.Stateful;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import org.blh.habilitacion.controllers.LoginController;
 import org.blh.habilitacion.entities.Usuario;
+import org.jasypt.util.text.BasicTextEncryptor;
 
 /**
  *
@@ -20,6 +22,7 @@ import org.blh.habilitacion.entities.Usuario;
  */
 @ManagedBean(name="login", eager=true)
 @SessionScoped
+@Stateful
 public class LoginBean {
 
     private String username;
@@ -28,6 +31,11 @@ public class LoginBean {
     private boolean connected = false;
     private Usuario user = null;
     private String wronUser;
+    private BasicTextEncryptor encrypt = new BasicTextEncryptor();
+    
+    public LoginBean(){
+        encrypt.setPassword("jajkaN18");
+    }
 
     public Usuario getUser() {
         return user;
@@ -52,16 +60,13 @@ public class LoginBean {
     public void setConnected(boolean connected) {
         this.connected = connected;
     }
-    
-    public LoginBean() {
-    }
 
     public String getUsername() {
         return username;
     }
 
     public void setUsername(String username) {
-        this.username = username;
+        this.username = encrypt.encrypt(username);
     }
 
     public String getPassword() {
@@ -69,7 +74,7 @@ public class LoginBean {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password = encrypt.encrypt(password);
     }
     
     public void loggin() throws IOException{
@@ -78,7 +83,7 @@ public class LoginBean {
             message = "Lo siento, debe ingresar un usuario y una contraseña válida";
         }
         else{
-            user = LoginController.login(username, password);
+            user = LoginController.login(this.getUsername(), this.getPassword());
             if(user != null){
                 wronUser = null;
                 connected = true;

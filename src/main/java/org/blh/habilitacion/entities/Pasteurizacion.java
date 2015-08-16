@@ -1,5 +1,5 @@
 package org.blh.habilitacion.entities;
-// Generated 30-jun-2015 0:45:21 by Hibernate Tools 4.3.1
+// Generated 06-jul-2015 22:01:19 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -24,8 +24,8 @@ import javax.persistence.TemporalType;
 public class Pasteurizacion  implements java.io.Serializable {
 
 
-     private int idPasteurizacion;
-     private Date fechaPasteurizacion;
+     private int idpasteurizacion;
+     private Date fechapasteurizacion;
      private String responsable;
      private String confirmacion;
      private Set biberons = new HashSet(0);
@@ -34,13 +34,13 @@ public class Pasteurizacion  implements java.io.Serializable {
     }
 
 	
-    public Pasteurizacion(int idPasteurizacion, String responsable) {
-        this.idPasteurizacion = idPasteurizacion;
+    public Pasteurizacion(int idpasteurizacion, String responsable) {
+        this.idpasteurizacion = idpasteurizacion;
         this.responsable = responsable;
     }
-    public Pasteurizacion(int idPasteurizacion, Date fechaPasteurizacion, String responsable, String confirmacion, Set biberons) {
-       this.idPasteurizacion = idPasteurizacion;
-       this.fechaPasteurizacion = fechaPasteurizacion;
+    public Pasteurizacion(int idpasteurizacion, Date fechapasteurizacion, String responsable, String confirmacion, Set biberons) {
+       this.idpasteurizacion = idpasteurizacion;
+       this.fechapasteurizacion = fechapasteurizacion;
        this.responsable = responsable;
        this.confirmacion = confirmacion;
        this.biberons = biberons;
@@ -49,23 +49,23 @@ public class Pasteurizacion  implements java.io.Serializable {
      @Id 
 
     
-    @Column(name="idPasteurizacion", nullable=false)
-    public int getIdPasteurizacion() {
-        return this.idPasteurizacion;
+    @Column(name="idpasteurizacion", unique=true, nullable=false)
+    public int getIdpasteurizacion() {
+        return this.idpasteurizacion;
     }
     
-    public void setIdPasteurizacion(int idPasteurizacion) {
-        this.idPasteurizacion = idPasteurizacion;
+    public void setIdpasteurizacion(int idpasteurizacion) {
+        this.idpasteurizacion = idpasteurizacion;
     }
 
     @Temporal(TemporalType.DATE)
-    @Column(name="fechaPasteurizacion", length=13)
-    public Date getFechaPasteurizacion() {
-        return this.fechaPasteurizacion;
+    @Column(name="fechapasteurizacion", length=13)
+    public Date getFechapasteurizacion() {
+        return this.fechapasteurizacion;
     }
     
-    public void setFechaPasteurizacion(Date fechaPasteurizacion) {
-        this.fechaPasteurizacion = fechaPasteurizacion;
+    public void setFechapasteurizacion(Date fechapasteurizacion) {
+        this.fechapasteurizacion = fechapasteurizacion;
     }
 
     

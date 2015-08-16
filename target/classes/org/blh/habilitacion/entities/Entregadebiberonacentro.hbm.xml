@@ -1,22 +1,22 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 30-jun-2015 0:45:24 by Hibernate Tools 4.3.1 -->
+<!-- Generated 06-jul-2015 22:01:22 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="org.blh.habilitacion.entities.Entregadebiberonacentro" table="entregadebiberonacentro" schema="public" optimistic-lock="version">
         <composite-id name="id" class="org.blh.habilitacion.entities.EntregadebiberonacentroId">
-            <key-property name="idCentro" type="int">
-                <column name="idCentro" />
+            <key-property name="idcentro" type="int">
+                <column name="idcentro" />
             </key-property>
-            <key-property name="idBiberon" type="int">
-                <column name="idBiberon" />
+            <key-property name="idbiberon" type="int">
+                <column name="idbiberon" />
             </key-property>
         </composite-id>
         <many-to-one name="biberon" class="org.blh.habilitacion.entities.Biberon" update="false" insert="false" fetch="select">
-            <column name="idBiberon" not-null="true" />
+            <column name="idbiberon" not-null="true" />
         </many-to-one>
         <many-to-one name="centros" class="org.blh.habilitacion.entities.Centros" update="false" insert="false" fetch="select">
-            <column name="idCentro" not-null="true" />
+            <column name="idcentro" not-null="true" />
         </many-to-one>
         <property name="fechaEntrega" type="date">
             <column name="fechaEntrega" length="13" />

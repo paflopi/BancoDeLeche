@@ -7,7 +7,6 @@ package org.blh.habilitacion.controllers;
 
 import java.util.List;
 import org.blh.habilitacion.util.HibernateUtil;
-import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
@@ -30,6 +29,7 @@ public abstract class AbstractController<T> {
                 initialize(o);
             }
         }
+        afterAll();
         s.close();
         return l;
     }

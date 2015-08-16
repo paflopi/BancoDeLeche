@@ -1,5 +1,5 @@
 package org.blh.habilitacion.entities;
-// Generated 30-jun-2015 0:45:21 by Hibernate Tools 4.3.1
+// Generated 06-jul-2015 22:01:19 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -28,8 +28,8 @@ public class Consentimientoxhr  implements java.io.Serializable {
      private ConsentimientoxhrId id;
      private Consentimiento consentimiento;
      private Hojaderuta hojaderuta;
-     private Integer cantFrascosEntregados;
-     private Integer cantFrascosRecolectados;
+     private Integer cantfrascosentregados;
+     private Integer cantfrascosrecolectados;
      private String observaciones;
      private Set frascoses = new HashSet(0);
 
@@ -42,12 +42,12 @@ public class Consentimientoxhr  implements java.io.Serializable {
         this.consentimiento = consentimiento;
         this.hojaderuta = hojaderuta;
     }
-    public Consentimientoxhr(ConsentimientoxhrId id, Consentimiento consentimiento, Hojaderuta hojaderuta, Integer cantFrascosEntregados, Integer cantFrascosRecolectados, String observaciones, Set frascoses) {
+    public Consentimientoxhr(ConsentimientoxhrId id, Consentimiento consentimiento, Hojaderuta hojaderuta, Integer cantfrascosentregados, Integer cantfrascosrecolectados, String observaciones, Set frascoses) {
        this.id = id;
        this.consentimiento = consentimiento;
        this.hojaderuta = hojaderuta;
-       this.cantFrascosEntregados = cantFrascosEntregados;
-       this.cantFrascosRecolectados = cantFrascosRecolectados;
+       this.cantfrascosentregados = cantfrascosentregados;
+       this.cantfrascosrecolectados = cantfrascosrecolectados;
        this.observaciones = observaciones;
        this.frascoses = frascoses;
     }
@@ -56,8 +56,8 @@ public class Consentimientoxhr  implements java.io.Serializable {
 
     
     @AttributeOverrides( {
-        @AttributeOverride(name="nroConcentimiento", column=@Column(name="nroConcentimiento", nullable=false) ), 
-        @AttributeOverride(name="idHojadeRuta", column=@Column(name="idHojadeRuta", nullable=false) ) } )
+        @AttributeOverride(name="nroconcentimiento", column=@Column(name="nroconcentimiento", nullable=false) ), 
+        @AttributeOverride(name="idhojaderuta", column=@Column(name="idhojaderuta", nullable=false) ) } )
     public ConsentimientoxhrId getId() {
         return this.id;
     }
@@ -67,7 +67,7 @@ public class Consentimientoxhr  implements java.io.Serializable {
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="nroConcentimiento", nullable=false, insertable=false, updatable=false)
+    @JoinColumn(name="nroconcentimiento", nullable=false, insertable=false, updatable=false)
     public Consentimiento getConsentimiento() {
         return this.consentimiento;
     }
@@ -77,7 +77,7 @@ public class Consentimientoxhr  implements java.io.Serializable {
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="idHojadeRuta", nullable=false, insertable=false, updatable=false)
+    @JoinColumn(name="idhojaderuta", nullable=false, insertable=false, updatable=false)
     public Hojaderuta getHojaderuta() {
         return this.hojaderuta;
     }
@@ -87,23 +87,23 @@ public class Consentimientoxhr  implements java.io.Serializable {
     }
 
     
-    @Column(name="cantFrascosEntregados")
-    public Integer getCantFrascosEntregados() {
-        return this.cantFrascosEntregados;
+    @Column(name="cantfrascosentregados")
+    public Integer getCantfrascosentregados() {
+        return this.cantfrascosentregados;
     }
     
-    public void setCantFrascosEntregados(Integer cantFrascosEntregados) {
-        this.cantFrascosEntregados = cantFrascosEntregados;
+    public void setCantfrascosentregados(Integer cantfrascosentregados) {
+        this.cantfrascosentregados = cantfrascosentregados;
     }
 
     
-    @Column(name="cantFrascosRecolectados")
-    public Integer getCantFrascosRecolectados() {
-        return this.cantFrascosRecolectados;
+    @Column(name="cantfrascosrecolectados")
+    public Integer getCantfrascosrecolectados() {
+        return this.cantfrascosrecolectados;
     }
     
-    public void setCantFrascosRecolectados(Integer cantFrascosRecolectados) {
-        this.cantFrascosRecolectados = cantFrascosRecolectados;
+    public void setCantfrascosrecolectados(Integer cantfrascosrecolectados) {
+        this.cantfrascosrecolectados = cantfrascosrecolectados;
     }
 
     

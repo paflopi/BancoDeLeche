@@ -1,5 +1,5 @@
 package org.blh.habilitacion.entities;
-// Generated 30-jun-2015 0:45:21 by Hibernate Tools 4.3.1
+// Generated 06-jul-2015 22:01:19 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -26,16 +27,16 @@ import javax.persistence.TemporalType;
 public class Consentimiento  implements java.io.Serializable {
 
 
-     private int nroConcentimiento;
+     private int nroconcentimiento;
      private Centros centros;
      private Donante donante;
      private Zona zona;
-     private Date fechaDesde;
-     private Date fechaHasta;
-     private Date diasyHorarios;
-     private Date fechNacBebeAsociado;
-     private Long edadGestacionalBebeAsociado;
-     private Date lugarNacBebeAsociado;
+     private Date fechadesde;
+     private Date fechahasta;
+     private Date diasyhorarios;
+     private Date fechnacbebeasociado;
+     private Long edadgestacionalbebeasociado;
+     private Date lugarnacbebeasociado;
      private String calle;
      private Integer altura;
      private String barrio;
@@ -43,9 +44,9 @@ public class Consentimiento  implements java.io.Serializable {
      private String mz;
      private String piso;
      private String departamento;
-     private Long permiteFotos;
-     private Integer cantFrascos;
-     private String motCierreConsentimiento;
+     private Long permitefotos;
+     private Integer cantfrascos;
+     private String motcierreconsentimiento;
      private Set consentimientoxhrs = new HashSet(0);
      private Set serologias = new HashSet(0);
      private Set bebeasociados = new HashSet(0);
@@ -54,22 +55,22 @@ public class Consentimiento  implements java.io.Serializable {
     }
 
 	
-    public Consentimiento(int nroConcentimiento, Donante donante, Zona zona) {
-        this.nroConcentimiento = nroConcentimiento;
+    public Consentimiento(int nroconcentimiento, Donante donante, Zona zona) {
+        this.nroconcentimiento = nroconcentimiento;
         this.donante = donante;
         this.zona = zona;
     }
-    public Consentimiento(int nroConcentimiento, Centros centros, Donante donante, Zona zona, Date fechaDesde, Date fechaHasta, Date diasyHorarios, Date fechNacBebeAsociado, Long edadGestacionalBebeAsociado, Date lugarNacBebeAsociado, String calle, Integer altura, String barrio, String pc, String mz, String piso, String departamento, Long permiteFotos, Integer cantFrascos, String motCierreConsentimiento, Set consentimientoxhrs, Set serologias, Set bebeasociados) {
-       this.nroConcentimiento = nroConcentimiento;
+    public Consentimiento(int nroconcentimiento, Centros centros, Donante donante, Zona zona, Date fechadesde, Date fechahasta, Date diasyhorarios, Date fechnacbebeasociado, Long edadgestacionalbebeasociado, Date lugarnacbebeasociado, String calle, Integer altura, String barrio, String pc, String mz, String piso, String departamento, Long permitefotos, Integer cantfrascos, String motcierreconsentimiento, Set consentimientoxhrs, Set serologias, Set bebeasociados) {
+       this.nroconcentimiento = nroconcentimiento;
        this.centros = centros;
        this.donante = donante;
        this.zona = zona;
-       this.fechaDesde = fechaDesde;
-       this.fechaHasta = fechaHasta;
-       this.diasyHorarios = diasyHorarios;
-       this.fechNacBebeAsociado = fechNacBebeAsociado;
-       this.edadGestacionalBebeAsociado = edadGestacionalBebeAsociado;
-       this.lugarNacBebeAsociado = lugarNacBebeAsociado;
+       this.fechadesde = fechadesde;
+       this.fechahasta = fechahasta;
+       this.diasyhorarios = diasyhorarios;
+       this.fechnacbebeasociado = fechnacbebeasociado;
+       this.edadgestacionalbebeasociado = edadgestacionalbebeasociado;
+       this.lugarnacbebeasociado = lugarnacbebeasociado;
        this.calle = calle;
        this.altura = altura;
        this.barrio = barrio;
@@ -77,9 +78,9 @@ public class Consentimiento  implements java.io.Serializable {
        this.mz = mz;
        this.piso = piso;
        this.departamento = departamento;
-       this.permiteFotos = permiteFotos;
-       this.cantFrascos = cantFrascos;
-       this.motCierreConsentimiento = motCierreConsentimiento;
+       this.permitefotos = permitefotos;
+       this.cantfrascos = cantfrascos;
+       this.motcierreconsentimiento = motcierreconsentimiento;
        this.consentimientoxhrs = consentimientoxhrs;
        this.serologias = serologias;
        this.bebeasociados = bebeasociados;
@@ -88,17 +89,17 @@ public class Consentimiento  implements java.io.Serializable {
      @Id 
 
     
-    @Column(name="nroConcentimiento", nullable=false)
-    public int getNroConcentimiento() {
-        return this.nroConcentimiento;
+    @Column(name="nroconcentimiento", unique=true, nullable=false)
+    public int getNroconcentimiento() {
+        return this.nroconcentimiento;
     }
     
-    public void setNroConcentimiento(int nroConcentimiento) {
-        this.nroConcentimiento = nroConcentimiento;
+    public void setNroconcentimiento(int nroconcentimiento) {
+        this.nroconcentimiento = nroconcentimiento;
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="idCentro")
+    @JoinColumn(name="idcentro")
     public Centros getCentros() {
         return this.centros;
     }
@@ -108,7 +109,7 @@ public class Consentimiento  implements java.io.Serializable {
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="nroDonante", nullable=false)
+    @JoinColumn(name="nrodonante", nullable=false)
     public Donante getDonante() {
         return this.donante;
     }
@@ -118,7 +119,10 @@ public class Consentimiento  implements java.io.Serializable {
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="idZona", nullable=false)
+    @JoinColumns( { 
+        @JoinColumn(name="idzona", referencedColumnName="idzona", nullable=false), 
+        @JoinColumn(name="idlocalidad", referencedColumnName="idlocalidad", nullable=false), 
+        @JoinColumn(name="idprovincia", referencedColumnName="idprovincia", nullable=false) } )
     public Zona getZona() {
         return this.zona;
     }
@@ -128,63 +132,63 @@ public class Consentimiento  implements java.io.Serializable {
     }
 
     @Temporal(TemporalType.DATE)
-    @Column(name="fechaDesde", length=13)
-    public Date getFechaDesde() {
-        return this.fechaDesde;
+    @Column(name="fechadesde", length=13)
+    public Date getFechadesde() {
+        return this.fechadesde;
     }
     
-    public void setFechaDesde(Date fechaDesde) {
-        this.fechaDesde = fechaDesde;
+    public void setFechadesde(Date fechadesde) {
+        this.fechadesde = fechadesde;
     }
 
     @Temporal(TemporalType.DATE)
-    @Column(name="fechaHasta", length=13)
-    public Date getFechaHasta() {
-        return this.fechaHasta;
+    @Column(name="fechahasta", length=13)
+    public Date getFechahasta() {
+        return this.fechahasta;
     }
     
-    public void setFechaHasta(Date fechaHasta) {
-        this.fechaHasta = fechaHasta;
+    public void setFechahasta(Date fechahasta) {
+        this.fechahasta = fechahasta;
     }
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name="diasyHorarios", length=29)
-    public Date getDiasyHorarios() {
-        return this.diasyHorarios;
+    @Column(name="diasyhorarios", length=29)
+    public Date getDiasyhorarios() {
+        return this.diasyhorarios;
     }
     
-    public void setDiasyHorarios(Date diasyHorarios) {
-        this.diasyHorarios = diasyHorarios;
+    public void setDiasyhorarios(Date diasyhorarios) {
+        this.diasyhorarios = diasyhorarios;
     }
 
     @Temporal(TemporalType.DATE)
-    @Column(name="fechNacBebeAsociado", length=13)
-    public Date getFechNacBebeAsociado() {
-        return this.fechNacBebeAsociado;
+    @Column(name="fechnacbebeasociado", length=13)
+    public Date getFechnacbebeasociado() {
+        return this.fechnacbebeasociado;
     }
     
-    public void setFechNacBebeAsociado(Date fechNacBebeAsociado) {
-        this.fechNacBebeAsociado = fechNacBebeAsociado;
+    public void setFechnacbebeasociado(Date fechnacbebeasociado) {
+        this.fechnacbebeasociado = fechnacbebeasociado;
     }
 
     
-    @Column(name="edadGestacionalBebeAsociado", precision=10, scale=0)
-    public Long getEdadGestacionalBebeAsociado() {
-        return this.edadGestacionalBebeAsociado;
+    @Column(name="edadgestacionalbebeasociado", precision=10, scale=0)
+    public Long getEdadgestacionalbebeasociado() {
+        return this.edadgestacionalbebeasociado;
     }
     
-    public void setEdadGestacionalBebeAsociado(Long edadGestacionalBebeAsociado) {
-        this.edadGestacionalBebeAsociado = edadGestacionalBebeAsociado;
+    public void setEdadgestacionalbebeasociado(Long edadgestacionalbebeasociado) {
+        this.edadgestacionalbebeasociado = edadgestacionalbebeasociado;
     }
 
     @Temporal(TemporalType.DATE)
-    @Column(name="lugarNacBebeAsociado", length=13)
-    public Date getLugarNacBebeAsociado() {
-        return this.lugarNacBebeAsociado;
+    @Column(name="lugarnacbebeasociado", length=13)
+    public Date getLugarnacbebeasociado() {
+        return this.lugarnacbebeasociado;
     }
     
-    public void setLugarNacBebeAsociado(Date lugarNacBebeAsociado) {
-        this.lugarNacBebeAsociado = lugarNacBebeAsociado;
+    public void setLugarnacbebeasociado(Date lugarnacbebeasociado) {
+        this.lugarnacbebeasociado = lugarnacbebeasociado;
     }
 
     
@@ -258,33 +262,33 @@ public class Consentimiento  implements java.io.Serializable {
     }
 
     
-    @Column(name="permiteFotos")
-    public Long getPermiteFotos() {
-        return this.permiteFotos;
+    @Column(name="permitefotos")
+    public Long getPermitefotos() {
+        return this.permitefotos;
     }
     
-    public void setPermiteFotos(Long permiteFotos) {
-        this.permiteFotos = permiteFotos;
-    }
-
-    
-    @Column(name="cantFrascos")
-    public Integer getCantFrascos() {
-        return this.cantFrascos;
-    }
-    
-    public void setCantFrascos(Integer cantFrascos) {
-        this.cantFrascos = cantFrascos;
+    public void setPermitefotos(Long permitefotos) {
+        this.permitefotos = permitefotos;
     }
 
     
-    @Column(name="motCierreConsentimiento", length=30)
-    public String getMotCierreConsentimiento() {
-        return this.motCierreConsentimiento;
+    @Column(name="cantfrascos")
+    public Integer getCantfrascos() {
+        return this.cantfrascos;
     }
     
-    public void setMotCierreConsentimiento(String motCierreConsentimiento) {
-        this.motCierreConsentimiento = motCierreConsentimiento;
+    public void setCantfrascos(Integer cantfrascos) {
+        this.cantfrascos = cantfrascos;
+    }
+
+    
+    @Column(name="motcierreconsentimiento", length=30)
+    public String getMotcierreconsentimiento() {
+        return this.motcierreconsentimiento;
+    }
+    
+    public void setMotcierreconsentimiento(String motcierreconsentimiento) {
+        this.motcierreconsentimiento = motcierreconsentimiento;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="consentimiento")

@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 30-jun-2015 0:45:24 by Hibernate Tools 4.3.1 -->
+<!-- Generated 06-jul-2015 22:01:22 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="org.blh.habilitacion.entities.Pasteurizacion" table="pasteurizacion" schema="public" optimistic-lock="version">
-        <id name="idPasteurizacion" type="int">
-            <column name="idPasteurizacion" />
+        <id name="idpasteurizacion" type="int">
+            <column name="idpasteurizacion" />
             <generator class="assigned" />
         </id>
-        <property name="fechaPasteurizacion" type="date">
-            <column name="fechaPasteurizacion" length="13" />
+        <property name="fechapasteurizacion" type="date">
+            <column name="fechapasteurizacion" length="13" />
         </property>
         <property name="responsable" type="string">
             <column name="responsable" length="18" not-null="true" />
@@ -19,7 +19,7 @@
         </property>
         <set name="biberons" table="biberon" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="idPasteurizacion" not-null="true" />
+                <column name="idpasteurizacion" not-null="true" />
             </key>
             <one-to-many class="org.blh.habilitacion.entities.Biberon" />
         </set>

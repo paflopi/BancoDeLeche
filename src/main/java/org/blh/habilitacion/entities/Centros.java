@@ -1,5 +1,5 @@
 package org.blh.habilitacion.entities;
-// Generated 30-jun-2015 0:45:21 by Hibernate Tools 4.3.1
+// Generated 06-jul-2015 22:01:19 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -21,10 +21,10 @@ import javax.persistence.Table;
 public class Centros  implements java.io.Serializable {
 
 
-     private int idCentro;
-     private String nombreCentro;
-     private String domicilioCentro;
-     private String telefonoCentro;
+     private int idcentro;
+     private String nombrecentro;
+     private String domiciliocentro;
+     private String telefonocentro;
      private Set consentimientos = new HashSet(0);
      private Set entregadebiberonacentros = new HashSet(0);
 
@@ -32,14 +32,14 @@ public class Centros  implements java.io.Serializable {
     }
 
 	
-    public Centros(int idCentro) {
-        this.idCentro = idCentro;
+    public Centros(int idcentro) {
+        this.idcentro = idcentro;
     }
-    public Centros(int idCentro, String nombreCentro, String domicilioCentro, String telefonoCentro, Set consentimientos, Set entregadebiberonacentros) {
-       this.idCentro = idCentro;
-       this.nombreCentro = nombreCentro;
-       this.domicilioCentro = domicilioCentro;
-       this.telefonoCentro = telefonoCentro;
+    public Centros(int idcentro, String nombrecentro, String domiciliocentro, String telefonocentro, Set consentimientos, Set entregadebiberonacentros) {
+       this.idcentro = idcentro;
+       this.nombrecentro = nombrecentro;
+       this.domiciliocentro = domiciliocentro;
+       this.telefonocentro = telefonocentro;
        this.consentimientos = consentimientos;
        this.entregadebiberonacentros = entregadebiberonacentros;
     }
@@ -47,43 +47,43 @@ public class Centros  implements java.io.Serializable {
      @Id 
 
     
-    @Column(name="idCentro", nullable=false)
-    public int getIdCentro() {
-        return this.idCentro;
+    @Column(name="idcentro", unique=true, nullable=false)
+    public int getIdcentro() {
+        return this.idcentro;
     }
     
-    public void setIdCentro(int idCentro) {
-        this.idCentro = idCentro;
-    }
-
-    
-    @Column(name="nombreCentro", length=30)
-    public String getNombreCentro() {
-        return this.nombreCentro;
-    }
-    
-    public void setNombreCentro(String nombreCentro) {
-        this.nombreCentro = nombreCentro;
+    public void setIdcentro(int idcentro) {
+        this.idcentro = idcentro;
     }
 
     
-    @Column(name="domicilioCentro", length=30)
-    public String getDomicilioCentro() {
-        return this.domicilioCentro;
+    @Column(name="nombrecentro", length=30)
+    public String getNombrecentro() {
+        return this.nombrecentro;
     }
     
-    public void setDomicilioCentro(String domicilioCentro) {
-        this.domicilioCentro = domicilioCentro;
+    public void setNombrecentro(String nombrecentro) {
+        this.nombrecentro = nombrecentro;
     }
 
     
-    @Column(name="telefonoCentro", length=15)
-    public String getTelefonoCentro() {
-        return this.telefonoCentro;
+    @Column(name="domiciliocentro", length=30)
+    public String getDomiciliocentro() {
+        return this.domiciliocentro;
     }
     
-    public void setTelefonoCentro(String telefonoCentro) {
-        this.telefonoCentro = telefonoCentro;
+    public void setDomiciliocentro(String domiciliocentro) {
+        this.domiciliocentro = domiciliocentro;
+    }
+
+    
+    @Column(name="telefonocentro", length=15)
+    public String getTelefonocentro() {
+        return this.telefonocentro;
+    }
+    
+    public void setTelefonocentro(String telefonocentro) {
+        this.telefonocentro = telefonocentro;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="centros")

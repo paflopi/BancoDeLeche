@@ -1,5 +1,5 @@
 package org.blh.habilitacion.entities;
-// Generated 30-jun-2015 0:45:21 by Hibernate Tools 4.3.1
+// Generated 06-jul-2015 22:01:19 by Hibernate Tools 4.3.1
 
 
 import javax.persistence.Column;
@@ -12,36 +12,36 @@ import javax.persistence.Embeddable;
 public class SeguimientobebereceptorId  implements java.io.Serializable {
 
 
-     private int idSegBebeReceptor;
-     private int idBebeReceptor;
+     private int idsegbebereceptor;
+     private int idbebereceptor;
 
     public SeguimientobebereceptorId() {
     }
 
-    public SeguimientobebereceptorId(int idSegBebeReceptor, int idBebeReceptor) {
-       this.idSegBebeReceptor = idSegBebeReceptor;
-       this.idBebeReceptor = idBebeReceptor;
+    public SeguimientobebereceptorId(int idsegbebereceptor, int idbebereceptor) {
+       this.idsegbebereceptor = idsegbebereceptor;
+       this.idbebereceptor = idbebereceptor;
     }
    
 
 
-    @Column(name="idSegBebeReceptor", nullable=false)
-    public int getIdSegBebeReceptor() {
-        return this.idSegBebeReceptor;
+    @Column(name="idsegbebereceptor", nullable=false)
+    public int getIdsegbebereceptor() {
+        return this.idsegbebereceptor;
     }
     
-    public void setIdSegBebeReceptor(int idSegBebeReceptor) {
-        this.idSegBebeReceptor = idSegBebeReceptor;
+    public void setIdsegbebereceptor(int idsegbebereceptor) {
+        this.idsegbebereceptor = idsegbebereceptor;
     }
 
 
-    @Column(name="idBebeReceptor", nullable=false)
-    public int getIdBebeReceptor() {
-        return this.idBebeReceptor;
+    @Column(name="idbebereceptor", nullable=false)
+    public int getIdbebereceptor() {
+        return this.idbebereceptor;
     }
     
-    public void setIdBebeReceptor(int idBebeReceptor) {
-        this.idBebeReceptor = idBebeReceptor;
+    public void setIdbebereceptor(int idbebereceptor) {
+        this.idbebereceptor = idbebereceptor;
     }
 
 
@@ -51,15 +51,15 @@ public class SeguimientobebereceptorId  implements java.io.Serializable {
 		 if ( !(other instanceof SeguimientobebereceptorId) ) return false;
 		 SeguimientobebereceptorId castOther = ( SeguimientobebereceptorId ) other; 
          
-		 return (this.getIdSegBebeReceptor()==castOther.getIdSegBebeReceptor())
- && (this.getIdBebeReceptor()==castOther.getIdBebeReceptor());
+		 return (this.getIdsegbebereceptor()==castOther.getIdsegbebereceptor())
+ && (this.getIdbebereceptor()==castOther.getIdbebereceptor());
    }
    
    public int hashCode() {
          int result = 17;
          
-         result = 37 * result + this.getIdSegBebeReceptor();
-         result = 37 * result + this.getIdBebeReceptor();
+         result = 37 * result + this.getIdsegbebereceptor();
+         result = 37 * result + this.getIdbebereceptor();
          return result;
    }   
 

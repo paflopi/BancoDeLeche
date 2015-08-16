@@ -1,31 +1,31 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 30-jun-2015 0:45:24 by Hibernate Tools 4.3.1 -->
+<!-- Generated 06-jul-2015 22:01:22 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="org.blh.habilitacion.entities.Centros" table="centros" schema="public" optimistic-lock="version">
-        <id name="idCentro" type="int">
-            <column name="idCentro" />
+        <id name="idcentro" type="int">
+            <column name="idcentro" />
             <generator class="assigned" />
         </id>
-        <property name="nombreCentro" type="string">
-            <column name="nombreCentro" length="30" />
+        <property name="nombrecentro" type="string">
+            <column name="nombrecentro" length="30" />
         </property>
-        <property name="domicilioCentro" type="string">
-            <column name="domicilioCentro" length="30" />
+        <property name="domiciliocentro" type="string">
+            <column name="domiciliocentro" length="30" />
         </property>
-        <property name="telefonoCentro" type="string">
-            <column name="telefonoCentro" length="15" />
+        <property name="telefonocentro" type="string">
+            <column name="telefonocentro" length="15" />
         </property>
         <set name="consentimientos" table="consentimiento" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="idCentro" />
+                <column name="idcentro" />
             </key>
             <one-to-many class="org.blh.habilitacion.entities.Consentimiento" />
         </set>
         <set name="entregadebiberonacentros" table="entregadebiberonacentro" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="idCentro" not-null="true" />
+                <column name="idcentro" not-null="true" />
             </key>
             <one-to-many class="org.blh.habilitacion.entities.Entregadebiberonacentro" />
         </set>
